@@ -47,10 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Character\BaseCharacter.cs" />
+     <Compile Include="Assets\Scripts\Character\Bomber.cs" />
      <Compile Include="Assets\Scripts\Character\Runner.cs" />
+     <Compile Include="Assets\Scripts\Controllers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\Scene.cs" />
      <Compile Include="Assets\Scripts\Controllers\SceneController.cs" />
+     <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\Flag.cs" />
+     <Compile Include="Assets\Scripts\GUI\GUIScore.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Marcelo/Projeto/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

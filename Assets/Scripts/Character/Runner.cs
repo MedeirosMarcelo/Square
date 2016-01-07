@@ -6,28 +6,45 @@ public class Runner : BaseCharacter {
     bool previousButton1State;
     public Flag flag;
     bool CanPickFlag { get; set; }
+    CharacterState state;
 
     void Update() {
-        if (dead) {
-            //UpdateRespawn(gametime);
-            CanPickFlag = false;
+        StateMachine();
+    }
+
+    protected void StateMachine() {
+        switch (state) {
+            default:
+            case CharacterState.Alive:
+                if (canControl && canMove) {
+                    Move();
+                }
+                CanPickFlag = true;
+                break;
+            case CharacterState.Dead:
+                break;
         }
-        else {
-            if (canControl && canMove) {
-                //UpdateMovement(gametime);
-            }
-            Move();
-            CanPickFlag = true;
-            DropFlag();
-            if (characterHit != null) {
-                characterHit.Die(this);
-            }
+    }
+
+    protected void EnterState(CharacterState newState) {
+        CharacterState previoState = newState;
+        state = newState;
+
+        switch (state) {
+            default:
+            case CharacterState.Alive:
+                Move();
+                break;
+            case CharacterState.Dead:
+             //   StartRespawn();
+                CanPickFlag = false;
+                break;
         }
     }
 
     void PickUpFlag(Flag flag) {
         flag.PickUp(this);
-        BaseColor = new Color(172, 225, 50, 255);
+        BaseColor = Color.green;//new Color(172, 225, 50, 255);
         Debug.Log("pickup");
     }
 
@@ -45,6 +62,22 @@ public class Runner : BaseCharacter {
                 Debug.Log(col.gameObject);
                 PickUpFlag(col.gameObject.GetComponent<Flag>());
             }
+        }
+
+        if (flag != null && col.name == "Finish Line") {
+            Score();
+        }
+    }
+
+    void Score() {
+        gameManager.Score += 1;
+        Application.LoadLevel(Application.loadedLevel);
+        //flag.ResetPosition();
+    }
+
+    void OnCollisionEnter(Collision col) {
+        if (col.gameObject.name == "Explosion") {
+            Die(col.gameObject.tag);
         }
     }
 }
