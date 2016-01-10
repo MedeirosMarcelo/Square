@@ -12,8 +12,8 @@ public class Bomber : BaseCharacter {
     float explodingSize;
     Timer explosionTimer;
 
-    static Color bomberColor = Color.yellow;
-    static Color explodingColor = Color.red;
+    public static Color bomberColor = Color.white;
+    public static Color explodingColor = Color.red;
 
     static Texture2D explosionSprite;
     static Texture2D bomberSprite;
@@ -22,6 +22,7 @@ public class Bomber : BaseCharacter {
 
     void Start() {
         explosion = transform.Find("Explosion").GetComponent<Explosion>();
+        base.Start();
     }
 
     void Update() {
@@ -62,12 +63,11 @@ public class Bomber : BaseCharacter {
 
     public override void Reset() {
         base.Reset();
-        baseColor = bomberColor;
         explosionTriggered = false;
         triggerTimer = new Timer();
         explosionTimer = new Timer();
         explodingSize = 1.0f;
-        baseColor = bomberColor;
+        BaseColor = bomberColor;
         respawnTime = 0.85f;
     }
 
@@ -101,18 +101,16 @@ public class Bomber : BaseCharacter {
 
     void ControlInput() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            explosion.TriggerBomb();
+            explosion.TriggerBomb(this);
         }
     }
 
     public override void Die(string killerTag) {
+        state = CharacterState.Dead;
         if (killerTag == "Explosion" || killerTag == "Bomber") {
             explosion.Explode();
-            base.Die(killerTag);
         }
-        else {
-            base.Die(killerTag);
-        }
+        base.Die(killerTag);
     }
 
     void ReturnFlag(Flag flag) {
@@ -120,8 +118,7 @@ public class Bomber : BaseCharacter {
     }
 
     void OnCollisionEnter(Collision col) {
-        Debug.Log(col.gameObject.name);
-        if (col.gameObject.tag == "Explosion" || 
+        if (col.gameObject.tag == "Explosion" ||
             col.gameObject.tag == "Runner" ||
             col.gameObject.tag == "Bomber") {
             Die(col.gameObject.tag);

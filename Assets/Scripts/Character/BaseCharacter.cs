@@ -15,6 +15,8 @@ public class BaseCharacter : MonoBehaviour {
     public float acceleration_Run = 0.1f;
     public float deceleration_Run = 0.05f;
 
+    public byte playerNumber = 0;
+
     public bool canControl = true;
     public bool canMove = true;
 
@@ -27,15 +29,14 @@ public class BaseCharacter : MonoBehaviour {
     public static Random random = new Random();
     public Vector2 defaultSpawnPosition = new Vector2(0.0f, 0.0f);
 
-    public Color baseColor = Color.white;
+    [SerializeField] Color baseColor = Color.white;
     protected GameManager gameManager;
     GameObject model;
     Vector3 velocity;
-    Vector3 size;
     Animator animator = new Animator();
 
 
-    void Start() {
+    protected void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         model = transform.Find("Model").gameObject;
         Reset();
@@ -45,7 +46,6 @@ public class BaseCharacter : MonoBehaviour {
         characterHit = null;
         collided = false;
         dead = false;
-        size = new Vector3(transform.position.x - transform.localScale.x * 0.5f, 1, transform.position.z - transform.localScale.z * 0.5f);
     }
 
     public void Respawn() {

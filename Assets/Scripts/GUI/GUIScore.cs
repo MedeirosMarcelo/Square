@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GUIScore : MonoBehaviour {
 
+    public byte playerNumber;
     GameManager gameManager;
     Text scoreValue;
 
@@ -13,6 +14,6 @@ public class GUIScore : MonoBehaviour {
     }
 
     void Update() {
-        scoreValue.text = gameManager.Score.ToString();
+        scoreValue.text = GameManager.Match.PlayerScore[playerNumber].ToString();
     }
 }

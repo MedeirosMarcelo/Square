@@ -38,6 +38,7 @@ public class Flag : MonoBehaviour {
     public void Drop() {
         if (Carrier != null) {
             transform.position = Carrier.transform.position;
+            gameObject.SetActive(true);
             Carrier.BaseColor = Color.white;
             Carrier.flag = null;
             Carrier = null;

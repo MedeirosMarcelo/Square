@@ -17,7 +17,6 @@ public class Timer {
                 elapsedTime = 0;
                 ended = true;
             }
-            //       System.Diagnostics.Debug.WriteLine("Timer: " + elapsedTime);
         }
         else {
             ended = false;

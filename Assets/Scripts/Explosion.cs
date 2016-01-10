@@ -3,21 +3,25 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour {
 
-    GameObject explosion;
     public float bombDelay = 1f;
+    public float duration = 2f;
+    GameObject explosion;
+    Bomber bomber;
     Timer timer = new Timer();
-    float duration = 1;
     Animator animator;
+    bool triggered;
 
     void Start() {
         animator = GetComponent<Animator>();
     }
 
-	void Update () {
-        ExplosionEffect();
-	}
+    void Update() {
+        ChangeBomberColor();
+    }
 
-    public void TriggerBomb() {
+    public void TriggerBomb(Bomber bomber) {
+        triggered = true;
+        this.bomber = bomber;
         StartCoroutine("Trigger", bombDelay);
     }
 
@@ -29,13 +33,16 @@ public class Explosion : MonoBehaviour {
     public void Explode() {
         transform.SetParent(null);
         animator.SetBool("Explode", true);
+        Destroy(this.gameObject, duration);
     }
 
-    void ExplosionEffect() {
-        bool ended = false;
-        timer.TimerCounter(duration, out ended);
-        if (ended) {
-           // Explode();
+    float t = 0;
+    void ChangeBomberColor() {
+        if (triggered) {
+            bomber.BaseColor = Color.Lerp(Bomber.bomberColor, Bomber.explodingColor, t);
+            if (t < 1) {
+                t += Time.deltaTime / bombDelay;
+            }
         }
     }
 }

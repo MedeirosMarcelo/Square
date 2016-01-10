@@ -36,7 +36,7 @@ public class Runner : BaseCharacter {
                 Move();
                 break;
             case CharacterState.Dead:
-             //   StartRespawn();
+                //   StartRespawn();
                 CanPickFlag = false;
                 break;
         }
@@ -45,21 +45,17 @@ public class Runner : BaseCharacter {
     void PickUpFlag(Flag flag) {
         flag.PickUp(this);
         BaseColor = Color.green;//new Color(172, 225, 50, 255);
-        Debug.Log("pickup");
     }
 
     void DropFlag() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (flag != null) {
-                flag.Drop();
-            }
+        if (flag != null) {
+            flag.Drop();
         }
     }
 
     void OnTriggerEnter(Collider col) {
         if (CanPickFlag) {
             if (col.tag == "Flag") {
-                Debug.Log(col.gameObject);
                 PickUpFlag(col.gameObject.GetComponent<Flag>());
             }
         }
@@ -70,14 +66,18 @@ public class Runner : BaseCharacter {
     }
 
     void Score() {
-        gameManager.Score += 1;
-        Application.LoadLevel(Application.loadedLevel);
-        //flag.ResetPosition();
+        gameManager.Score(playerNumber);
     }
 
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.name == "Explosion") {
             Die(col.gameObject.tag);
         }
+    }
+
+    public override void Die(string killerTag) {
+        state = CharacterState.Dead;
+        DropFlag();
+        base.Die(killerTag);
     }
 }
