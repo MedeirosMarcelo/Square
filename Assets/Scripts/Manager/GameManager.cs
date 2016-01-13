@@ -60,4 +60,9 @@ public class GameManager : MonoBehaviour {
         }
         roundClock = timer.GetTimeDecreasing();
     }
+
+    void SpawnModifiers (){
+
+
+    }
 }

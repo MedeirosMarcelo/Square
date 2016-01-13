@@ -6,6 +6,15 @@ public class Timer {
     float elapsedTime = 0;
     float length;
 
+    public bool Run(float duration) {
+        bool ended;
+        TimerCounter(duration, out ended);
+        if (ended) {
+            return true;
+        }
+        return false;
+    }
+
     public void TimerCounter(float length, out bool ended) {
         this.length = length;
         if (length > 0) {
@@ -21,6 +30,10 @@ public class Timer {
         else {
             ended = false;
         }
+    }
+
+    public void Reset() {
+        elapsedTime = 0;
     }
 
     public float GetTimeIncreasing() {

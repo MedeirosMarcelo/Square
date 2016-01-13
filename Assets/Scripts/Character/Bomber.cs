@@ -22,6 +22,7 @@ public class Bomber : BaseCharacter {
 
     void Start() {
         explosion = transform.Find("Explosion").GetComponent<Explosion>();
+        name = "Bomber";
         base.Start();
     }
 
@@ -62,13 +63,13 @@ public class Bomber : BaseCharacter {
     }
 
     public override void Reset() {
-        base.Reset();
         explosionTriggered = false;
         triggerTimer = new Timer();
         explosionTimer = new Timer();
         explodingSize = 1.0f;
         BaseColor = bomberColor;
         respawnTime = 0.85f;
+        base.Reset();
     }
 
     //public override void Draw(SpriteBatch spriteBatch) {

@@ -8,6 +8,11 @@ public class Runner : BaseCharacter {
     bool CanPickFlag { get; set; }
     CharacterState state;
 
+    void Start() {
+        name = "Runner";
+        base.Start();
+    }
+
     void Update() {
         StateMachine();
     }

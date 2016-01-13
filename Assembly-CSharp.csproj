@@ -57,6 +57,9 @@
      <Compile Include="Assets\Scripts\GUI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\MatchData.cs" />
+     <Compile Include="Assets\Scripts\Manager\ModifierSpawner.cs" />
+     <Compile Include="Assets\Scripts\Modifier\Magnetizer.cs" />
+     <Compile Include="Assets\Scripts\Modifier\Modifier.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Marcelo/Projeto/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
