@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class BaseInput {
+    public virtual string name { get; protected set; }
     public virtual float horizontal { get; protected set; }
     public virtual float vertical { get; protected set; }
     public virtual bool explode { get; protected set; }
 
     public BaseInput() {
+        name = "Generic input";
         horizontal = 0.0f;
         vertical = 0.0f;
         explode = false;
