@@ -7,6 +7,7 @@ public class DebugInput : MonoBehaviour {
 
 	void Start () {
         inputs.Add(new ControllerInput(ControllerId.One));
+        inputs.Add(new ControllerInput(ControllerId.Two));
 	}
 	
 	void Update () {

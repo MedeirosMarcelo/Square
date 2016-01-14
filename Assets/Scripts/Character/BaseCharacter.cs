@@ -29,11 +29,14 @@ public class BaseCharacter : MonoBehaviour {
     public static Random random = new Random();
     public Vector2 defaultSpawnPosition = new Vector2(0.0f, 0.0f);
 
-    [SerializeField] Color baseColor = Color.white;
+    [SerializeField]
+    Color baseColor = Color.white;
     protected GameManager gameManager;
     GameObject model;
     Vector3 velocity;
     Animator animator = new Animator();
+
+    public BaseInput input;
 
 
     protected void Start() {
@@ -54,7 +57,7 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     protected void Move() {
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
 
         if (direction == Vector3.zero) {
             velocity.x = Mathf.Lerp(velocity.x, 0, deceleration_Walk);

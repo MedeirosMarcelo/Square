@@ -9,12 +9,15 @@ public class Runner : BaseCharacter {
     CharacterState state;
 
     void Start() {
+        input = new ControllerInput(ControllerId.One);
         name = "Runner";
         base.Start();
     }
 
     void Update() {
+        input.Update();
         StateMachine();
+        input.FixedUpdate();
     }
 
     protected void StateMachine() {
