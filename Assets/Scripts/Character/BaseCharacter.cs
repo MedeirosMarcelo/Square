@@ -15,7 +15,7 @@ public class BaseCharacter : MonoBehaviour {
     public float acceleration_Run = 0.1f;
     public float deceleration_Run = 0.05f;
 
-    public byte playerNumber = 0;
+    public int playerNumber = 0;
 
     public bool canControl = true;
     public bool canMove = true;

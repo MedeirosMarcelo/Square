@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public class MatchData {
 
-    public IList<BaseCharacter> PlayerList { get; set; }
+    public IList<BaseCharacter> CharacterList { get; set; }
     public byte[] PlayerScore { get; set; }
     public int[] KillScore { get; set; }
 
     public MatchData() {
-        PlayerList = new List<BaseCharacter>();
+        CharacterList = new List<BaseCharacter>();
         PlayerScore = new byte[4];
     }
 }
