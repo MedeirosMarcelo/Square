@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Player {
 
-    public Controller Controller { get; set; }
+    public ControllerId Controller { get; set; }
     public string Name { get; set; }
-    public GameObject Character { get; set; }
+    public BaseCharacter Character { get; set; }
 
-    public Player(Controller controller, string name) {
+    public Player(ControllerId controller, string name) {
         this.Controller = controller;
         this.Name = name;
     }

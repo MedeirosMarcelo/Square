@@ -233,17 +233,9 @@ MonoBehaviour:
   maxSpeed_Walk: 15
   acceleration_Walk: 0.1
   deceleration_Walk: 0.05
-  maxSpeed_Run: 25
-  acceleration_Run: 0.1
-  deceleration_Run: 0.05
-  playerNumber: 0
+  type: 0
   canControl: 1
   canMove: 1
-  characterHit: {fileID: 0}
-  collided: 0
-  dead: 0
-  respawnTime: 1
-  defaultSpawnPosition: {x: 0, y: 0}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   explosion: {fileID: 11490242}
 --- !u!114 &11490242
@@ -277,7 +269,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101146}

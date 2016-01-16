@@ -3,28 +3,22 @@ using System.Collections;
 
 public class Bomber : BaseCharacter {
 
-    bool explosionTriggered;
-    bool previousButton1State;
-    Timer triggerTimer;
-
-    const float explosionMaxSize = 185f;
-    const float explosionTime = 1f;
-    float explodingSize;
-    Timer explosionTimer;
-
     public static Color bomberColor = Color.white;
     public static Color explodingColor = Color.red;
-
-    static Texture2D explosionSprite;
-    static Texture2D bomberSprite;
-    CharacterState state;
     public Explosion explosion;
 
-    void Start() {
+    bool explosionTriggered;
+    const float explosionTime = 1f;
+    Timer explosionTimer;
+    Timer triggerTimer;
+
+    protected override void Start() {
+        base.Start();
         input = new ControllerInput(ControllerId.Two);
         explosion = transform.Find("Explosion").GetComponent<Explosion>();
         name = "Bomber";
-        base.Start();
+        type = CharacterType.Bomber;
+        respawnDelay = gameManager.currentMap.bomberRespawnDelay;
     }
 
     void Update() {
@@ -34,33 +28,29 @@ public class Bomber : BaseCharacter {
     }
 
     protected void StateMachine() {
-        switch (state) {
+        switch (State) {
             default:
             case CharacterState.Alive:
                 if (canControl && canMove) {
                     Move();
                     ControlInput();
                 }
-                if (characterHit != null && characterHit is Bomber) {
-                    explosion.Explode();
-                }
                 break;
             case CharacterState.Dead:
+                StartRespawn();
                 break;
         }
     }
 
     protected void EnterState(CharacterState newState) {
         CharacterState previoState = newState;
-        state = newState;
+        State = newState;
 
-        switch (state) {
+        switch (State) {
             default:
             case CharacterState.Alive:
-                Move();
                 break;
             case CharacterState.Dead:
-                //   StartRespawn();
                 break;
         }
     }
@@ -69,24 +59,9 @@ public class Bomber : BaseCharacter {
         explosionTriggered = false;
         triggerTimer = new Timer();
         explosionTimer = new Timer();
-        explodingSize = 1.0f;
         BaseColor = bomberColor;
-        respawnTime = 0.85f;
         base.Reset();
     }
-
-    //public override void Draw(SpriteBatch spriteBatch) {
-    //    base.Draw(spriteBatch);
-    //    if (explosionTriggered) {
-    //        baseColor = Color.Lerp(baseColor, explodingColor, 0.05f);
-    //    }
-    //    if (exploding) {
-    //        Vector2 origin = new Vector2(sprite.Width * 0.5f, sprite.Height * 0.5f);
-    //        explodingSize = MathHelper.Lerp(explodingSize, explosionMaxSize, 0.33f);
-    //        float scale = 2.0f * explodingSize / sprite.Width;
-    //        spriteBatch.Draw(explosionSprite, position, null, null, origin, 0f, Vector2.One * scale, explodingColor, SpriteEffects.None, 0f);
-    //    }
-    //}
 
     void UpdateExplosionTrigger() {
         if (explosionTriggered) {
@@ -110,10 +85,10 @@ public class Bomber : BaseCharacter {
     }
 
     public override void Die(string killerTag) {
-        state = CharacterState.Dead;
         if (killerTag == "Explosion" || killerTag == "Bomber") {
             explosion.Explode();
         }
+        EnterState(CharacterState.Dead);
         base.Die(killerTag);
     }
 

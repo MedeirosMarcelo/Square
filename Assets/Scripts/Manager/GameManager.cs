@@ -3,12 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+public enum GameState {
+    Loading,
+    Playing,
+    End
+}
+
 public class GameManager : MonoBehaviour {
 
     public IList<Player> playerList = new List<Player>();
     public static MatchData Match = new MatchData();
     public byte maxScore = 5;
     public float roundClock;
+    public Map currentMap;
+    public GameState State { get; private set; }
 
     [SerializeField]
     GameObject runnerPrefab;
@@ -18,41 +26,31 @@ public class GameManager : MonoBehaviour {
     Timer timer = new Timer();
 
     void Awake() {
-
-        //AddPlayer(player1, runnerPrefab, new Vector3(-7.66f, 1f, 0f));
-        //AddPlayer(player2, bomberPrefab, new Vector3(8.53f, 1f, 3.79f));
-        //AddPlayer(player3, bomberPrefab, new Vector3(8.53f, 1f, 0f));
-        //AddPlayer(player4, bomberPrefab, new Vector3(8.53f, 1f, -3.79f));
-
-        //----- Move this to player selection screen.
-        //PlayerManager.AddPlayer(Controller.One, "");
-        //PlayerManager.AddPlayer(Controller.Two, "");
-        //PlayerManager.AddPlayer(Controller.Three, "");
-        //PlayerManager.AddPlayer(Controller.Four, "");
+        State = GameState.Loading;
         LoadPlayers();
-    }
-
-    void LoadPlayers() {
-        int i = 1;
-        foreach (Player pl in PlayerManager.GetPlayerList()) {
-            GameObject prefab;
-            if (Match.GetCharacterInRotation() == CharacterType.Runner) {
-                prefab = runnerPrefab;
-            }
-            else {
-                prefab = bomberPrefab;
-            }
-            pl.Character = prefab;
-            SpawnPlayer(pl, new Vector3(-7.66f * i, 1f, 0f));
-            i++;
-        }
+        State = GameState.Playing;
     }
 
     void Update() {
         RoundTimer();
     }
 
-    public void Score(Controller controller) {
+    void LoadPlayers() {
+        Vector3 position;
+        CharacterType type;
+        int r = 0;
+        int b = 0;
+        int i = 0;
+        foreach (Player pl in PlayerManager.GetPlayerList()) {
+            type = Match.GetCharacterInRotation();
+            if (type == CharacterType.Runner) { i = r; r++; }
+            if (type == CharacterType.Bomber) { i = b; b++; }
+            position = currentMap.GetSpawnPosition(type, i);
+            SpawnPlayer(pl, type, position);
+        }
+    }
+
+    public void Score(ControllerId controller) {
         Debug.Log(Match.PlayerScore[controller]);
         Match.PlayerScore[controller] += 1;
         if (Match.PlayerScore[controller] < maxScore) {
@@ -63,25 +61,35 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void RoundTimer() {
+        if (timer.Run(currentMap.clockTime)) {
+            StartNextRound();
+        }
+        roundClock = timer.GetTimeDecreasing();
+    }
+
     void StartNextRound() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void EndMatch() {
+        State = GameState.End;
         SceneManager.LoadScene("ResultScreen");
     }
 
-    void SpawnPlayer(Player player, Vector3 position) {
-        GameObject pl = (GameObject)Instantiate(player.Character, position, transform.rotation);
+    public void SpawnPlayer(Player player, CharacterType type, Vector3 position) {
+        GameObject pl = (GameObject)Instantiate(GetCharacterPrefab(type), position, transform.rotation);
         pl.GetComponent<BaseCharacter>().player = player;
+        player.Character = pl.GetComponent<BaseCharacter>();
     }
 
-    void RoundTimer() {
-        bool timerEnded;
-        timer.TimerCounter(60f, out timerEnded);
-        if (timerEnded) {
-            StartNextRound();
+    GameObject GetCharacterPrefab(CharacterType type) {
+        switch (type) {
+            default:
+            case CharacterType.Runner:
+                return runnerPrefab;
+            case CharacterType.Bomber:
+                return bomberPrefab;
         }
-        roundClock = timer.GetTimeDecreasing();
     }
 }

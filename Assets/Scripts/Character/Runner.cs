@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Runner : BaseCharacter {
 
-    bool previousButton1State;
     public Flag flag;
     bool CanPickFlag { get; set; }
-    CharacterState state;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
         input = new ControllerInput(ControllerId.One);
         name = "Runner";
-        base.Start();
+        type = CharacterType.Runner;
+        respawnDelay = gameManager.currentMap.runnerRespawnDelay;
     }
 
     void Update() {
@@ -21,7 +21,7 @@ public class Runner : BaseCharacter {
     }
 
     protected void StateMachine() {
-        switch (state) {
+        switch (State) {
             default:
             case CharacterState.Alive:
                 if (canControl && canMove) {
@@ -30,21 +30,20 @@ public class Runner : BaseCharacter {
                 CanPickFlag = true;
                 break;
             case CharacterState.Dead:
+                StartRespawn();
                 break;
         }
     }
 
     protected void EnterState(CharacterState newState) {
         CharacterState previoState = newState;
-        state = newState;
+        State = newState;
 
-        switch (state) {
+        switch (State) {
             default:
             case CharacterState.Alive:
-                Move();
                 break;
             case CharacterState.Dead:
-                //   StartRespawn();
                 CanPickFlag = false;
                 break;
         }
@@ -74,7 +73,6 @@ public class Runner : BaseCharacter {
     }
 
     void Score() {
-        Debug.Log(player);
         gameManager.Score(player.Controller);
     }
 
@@ -85,8 +83,8 @@ public class Runner : BaseCharacter {
     }
 
     public override void Die(string killerTag) {
-        state = CharacterState.Dead;
         DropFlag();
+        EnterState(CharacterState.Dead);
         base.Die(killerTag);
     }
 }

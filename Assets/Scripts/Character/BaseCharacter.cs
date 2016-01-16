@@ -13,74 +13,60 @@ public enum CharacterType {
 
 public class BaseCharacter : MonoBehaviour {
 
-    public float maxSpeed_Walk = 15;
-    public float acceleration_Walk = 0.1f;
-    public float deceleration_Walk = 0.05f;
-    public float maxSpeed_Run = 25;
-    public float acceleration_Run = 0.1f;
-    public float deceleration_Run = 0.05f;
+    public float maxSpeed = 15;
+    public float acceleration = 0.1f;
+    public float deceleration = 0.05f;
 
-    //public int playerNumber = 0;
-    public BaseCharacter character;
+    public CharacterType type;
     public Player player;
-
+    public BaseInput input;
     public bool canControl = true;
     public bool canMove = true;
 
-    public BaseCharacter characterHit;
-    public bool collided;
-    public bool dead = false;
-
-    public float respawnTime = 1.0f;
-
-    public static Random random = new Random();
-    public Vector2 defaultSpawnPosition = new Vector2(0.0f, 0.0f);
+    protected CharacterState State {get; set;}
+    protected float respawnDelay;
+    protected GameManager gameManager;
 
     [SerializeField]
     Color baseColor = Color.white;
-    protected GameManager gameManager;
-    GameObject model;
+
     Vector3 velocity;
+    Timer respawnTimer = new Timer();
     Animator animator = new Animator();
+    GameObject model;
+    Rigidbody rigidbody;
 
-    public BaseInput input;
-
-
-    protected void Start() {
+    protected virtual void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
+        rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
     }
 
     public virtual void Reset() {
-        characterHit = null;
-        collided = false;
-        dead = false;
-    }
-
-    public void Respawn() {
-        //position = SpawnPosition;
-        Reset();
+        model.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
+        State = CharacterState.Alive;
     }
 
     protected void Move() {
         Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
 
         if (direction == Vector3.zero) {
-            velocity.x = Mathf.Lerp(velocity.x, 0, deceleration_Walk);
+            velocity.x = Mathf.Lerp(velocity.x, 0, deceleration);
             if (Mathf.Abs(velocity.x - 0) < 0.01f)
                 velocity.x = 0;
 
-            velocity.z = Mathf.Lerp(velocity.z, 0, deceleration_Walk);
+            velocity.z = Mathf.Lerp(velocity.z, 0, deceleration);
             if (Mathf.Abs(velocity.z - 0) < 0.01f)
                 velocity.z = 0;
         }
         else {
-            velocity += direction * acceleration_Walk;
+            velocity += direction * acceleration;
         }
 
         velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
-        Vector3 newPosition = transform.position + (velocity * maxSpeed_Walk) * Time.deltaTime;
+        Vector3 newPosition = transform.position + (velocity * maxSpeed) * Time.deltaTime;
 
         //Clamp position to scene borders
         //transform.position = new Vector2(Mathf.Clamp(newPosition.x, -200 + size.x,
@@ -90,9 +76,25 @@ public class BaseCharacter : MonoBehaviour {
         transform.position = newPosition;
     }
 
+    protected void StartRespawn() {
+        if (respawnTimer.Run(respawnDelay)) {
+            Respawn();
+        }
+    }
+
+    public void Respawn() {
+        if (gameManager.State == GameState.Playing) {
+           // Reset();
+           // transform.position = gameManager.currentMap.GetSpawnPosition(type);
+            gameManager.SpawnPlayer(player, type, gameManager.currentMap.GetSpawnPosition(type));
+            Destroy(this.gameObject);
+        }
+    }
+
     virtual public void Die(string killerTag) {
-        dead = true;
-        transform.Find("Model").gameObject.SetActive(false);
+        model.SetActive(false);
+        GetComponent<BoxCollider>().enabled = false;
+        rigidbody.velocity = Vector3.zero;
     }
 
     public Color BaseColor {
@@ -105,4 +107,3 @@ public class BaseCharacter : MonoBehaviour {
         }
     }
 }
-

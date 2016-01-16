@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MatchData {
 
     public Queue<CharacterType> CharacterRotation { get; private set; }
-    public Dictionary<Controller, int> PlayerScore { get; set; }
+    public Dictionary<ControllerId, int> PlayerScore { get; set; }
     public int[] KillScore { get; set; }
 
     public MatchData() {
@@ -14,7 +14,7 @@ public class MatchData {
     }
 
     void LoadDictionaries() {
-        PlayerScore = new Dictionary<Controller,int>();
+        PlayerScore = new Dictionary<ControllerId, int>();
         foreach(Player pl in PlayerManager.GetPlayerList()){
             PlayerScore.Add(pl.Controller, 0);
         }

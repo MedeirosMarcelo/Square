@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GUIScore : MonoBehaviour {
 
-    public Controller controller;
+    public ControllerId controller;
     GameManager gameManager;
     Text scoreValue;
 

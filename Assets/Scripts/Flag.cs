@@ -20,13 +20,6 @@ public class Flag : MonoBehaviour {
 
     public void Update() {
         ResetCountdown();
-        DropIfDeadCarrier();
-    }
-
-    void DropIfDeadCarrier() {
-        if (Carrier != null && Carrier.dead) {
-            Drop();
-        }
     }
 
     public void PickUp(Runner runner) {

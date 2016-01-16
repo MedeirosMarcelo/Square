@@ -14,8 +14,7 @@ public class ModifierSpawner : MonoBehaviour{
         timer = new Timer();
 
         spawnList = new List<Transform>();
-        GameObject obj = GameObject.Find("Modifier Spawn List");
-        foreach (Transform tr in obj.transform) {
+        foreach (Transform tr in this.transform) {
             spawnList.Add(tr);
         }
     }

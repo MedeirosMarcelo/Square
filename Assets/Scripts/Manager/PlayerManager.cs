@@ -7,13 +7,13 @@ public static class PlayerManager {
     static IList<Player> PlayerList = new List<Player>();
 
     static PlayerManager() {
-        AddPlayer(Controller.One, "");
-        AddPlayer(Controller.Two, "");
-        AddPlayer(Controller.Three, "");
-        AddPlayer(Controller.Four, "");
+        AddPlayer(ControllerId.One, "");
+        AddPlayer(ControllerId.Two, "");
+        AddPlayer(ControllerId.Three, "");
+        AddPlayer(ControllerId.Four, "");
     }
 
-    public static void AddPlayer(Controller control, string name){
+    public static void AddPlayer(ControllerId control, string name) {
 	    Player pl = new Player(control, name);
 	    PlayerList.Add(pl);
     }
