@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198ca688dfd8f4b835ee5b3f148ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  controller: 2
 --- !u!114 &11404608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198ca688dfd8f4b835ee5b3f148ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 2
+  controller: 3
 --- !u!114 &11428864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198ca688dfd8f4b835ee5b3f148ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
+  controller: 1
 --- !u!114 &11432246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29198ca688dfd8f4b835ee5b3f148ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 3
+  controller: 4
 --- !u!114 &11449694
 MonoBehaviour:
   m_ObjectHideFlags: 1

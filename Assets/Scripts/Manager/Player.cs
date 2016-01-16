@@ -3,14 +3,12 @@ using System.Collections;
 
 public class Player {
 
-    public int Number { get; set; }
+    public Controller Controller { get; set; }
     public string Name { get; set; }
     public GameObject Character { get; set; }
-    //public Input Controller { get; set; }
 
-    public Player(int number, string name, GameObject character) {
-        this.Number = number;
+    public Player(Controller controller, string name) {
+        this.Controller = controller;
         this.Name = name;
-        this.Character = character;
     }
 }

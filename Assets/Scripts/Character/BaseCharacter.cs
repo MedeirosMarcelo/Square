@@ -3,7 +3,12 @@ using System.Collections;
 
 public enum CharacterState {
     Alive,
-    Dead,
+    Dead
+}
+
+public enum CharacterType {
+    Runner,
+    Bomber
 }
 
 public class BaseCharacter : MonoBehaviour {
@@ -15,7 +20,9 @@ public class BaseCharacter : MonoBehaviour {
     public float acceleration_Run = 0.1f;
     public float deceleration_Run = 0.05f;
 
-    public int playerNumber = 0;
+    //public int playerNumber = 0;
+    public BaseCharacter character;
+    public Player player;
 
     public bool canControl = true;
     public bool canMove = true;

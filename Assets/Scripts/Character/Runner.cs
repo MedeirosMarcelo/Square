@@ -71,7 +71,8 @@ public class Runner : BaseCharacter {
     }
 
     void Score() {
-        gameManager.Score(playerNumber);
+        Debug.Log(player);
+        gameManager.Score(player.Controller);
     }
 
     void OnCollisionEnter(Collision col) {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -18,29 +19,43 @@ public class GameManager : MonoBehaviour {
 
     void Awake() {
 
-        Player player1 = new Player(0, "A", runnerPrefab);
-        Player player2 = new Player(1, "B", bomberPrefab);
-        Player player3 = new Player(2, "C", bomberPrefab);
-        Player player4 = new Player(3, "D", bomberPrefab);
+        //AddPlayer(player1, runnerPrefab, new Vector3(-7.66f, 1f, 0f));
+        //AddPlayer(player2, bomberPrefab, new Vector3(8.53f, 1f, 3.79f));
+        //AddPlayer(player3, bomberPrefab, new Vector3(8.53f, 1f, 0f));
+        //AddPlayer(player4, bomberPrefab, new Vector3(8.53f, 1f, -3.79f));
 
-        playerList.Add(player1);
-        playerList.Add(player2);
-        playerList.Add(player3);
-        playerList.Add(player4);
+        //----- Move this to player selection screen.
+        //PlayerManager.AddPlayer(Controller.One, "");
+        //PlayerManager.AddPlayer(Controller.Two, "");
+        //PlayerManager.AddPlayer(Controller.Three, "");
+        //PlayerManager.AddPlayer(Controller.Four, "");
+        LoadPlayers();
+    }
 
-        AddPlayer(player1, runnerPrefab, new Vector3(-7.66f, 1f, 0f));
-        AddPlayer(player2, bomberPrefab, new Vector3(8.53f, 1f, 3.79f));
-        AddPlayer(player3, bomberPrefab, new Vector3(8.53f, 1f, 0f));
-        AddPlayer(player4, bomberPrefab, new Vector3(8.53f, 1f, -3.79f));
+    void LoadPlayers() {
+        int i = 1;
+        foreach (Player pl in PlayerManager.GetPlayerList()) {
+            GameObject prefab;
+            if (Match.GetCharacterInRotation() == CharacterType.Runner) {
+                prefab = runnerPrefab;
+            }
+            else {
+                prefab = bomberPrefab;
+            }
+            pl.Character = prefab;
+            SpawnPlayer(pl, new Vector3(-7.66f * i, 1f, 0f));
+            i++;
+        }
     }
 
     void Update() {
         RoundTimer();
     }
 
-    public void Score(int playerNumber) {
-        Match.PlayerScore[playerNumber] += 1;
-        if (Match.PlayerScore[playerNumber] < maxScore) {
+    public void Score(Controller controller) {
+        Debug.Log(Match.PlayerScore[controller]);
+        Match.PlayerScore[controller] += 1;
+        if (Match.PlayerScore[controller] < maxScore) {
             StartNextRound();
         }
         else {
@@ -49,28 +64,24 @@ public class GameManager : MonoBehaviour {
     }
 
     void StartNextRound() {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void EndMatch() {
-        Application.LoadLevel("ResultScreen");
+        SceneManager.LoadScene("ResultScreen");
     }
 
-    void AddPlayer(Player player, GameObject prefab, Vector3 position) {
-        GameObject pl = (GameObject)Instantiate(prefab, position, transform.rotation);
-        Match.CharacterList.Insert(player.Number, pl.GetComponent<BaseCharacter>());
+    void SpawnPlayer(Player player, Vector3 position) {
+        GameObject pl = (GameObject)Instantiate(player.Character, position, transform.rotation);
+        pl.GetComponent<BaseCharacter>().player = player;
     }
 
     void RoundTimer() {
         bool timerEnded;
         timer.TimerCounter(60f, out timerEnded);
         if (timerEnded) {
-            Application.LoadLevel(Application.loadedLevel);
+            StartNextRound();
         }
         roundClock = timer.GetTimeDecreasing();
-    }
-
-    void RotateCharacters() {
-
     }
 }
