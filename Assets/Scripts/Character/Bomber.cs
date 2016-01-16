@@ -21,13 +21,16 @@ public class Bomber : BaseCharacter {
     public Explosion explosion;
 
     void Start() {
+        input = new ControllerInput(ControllerId.Two);
         explosion = transform.Find("Explosion").GetComponent<Explosion>();
         name = "Bomber";
         base.Start();
     }
 
     void Update() {
+        input.Update();
         StateMachine();
+        input.FixedUpdate();
     }
 
     protected void StateMachine() {
@@ -101,7 +104,7 @@ public class Bomber : BaseCharacter {
     }
 
     void ControlInput() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (input.explode) {
             explosion.TriggerBomb(this);
         }
     }
