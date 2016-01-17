@@ -8,14 +8,8 @@ public class Flag : MonoBehaviour {
     public Vector3 defaultPosition;
     Timer timer = new Timer();
 
-    public Flag(){
-        //defaultPosition = new Vector2(game.graphics.PreferredBackBufferWidth * 0.9f, game.graphics.PreferredBackBufferHeight * 0.5f);
-        //transform.position = defaultPosition;
-        //game.sceneControl.GetScene().flagList.Add(this);
-    }
-
     void Start() {
-        ResetPosition();
+        defaultPosition = transform.position;
     }
 
     public void Update() {
@@ -50,6 +44,5 @@ public class Flag : MonoBehaviour {
 
     public void ResetPosition() {
         transform.position = defaultPosition;
-       // gameObject.SetActive(true);
     }
 }

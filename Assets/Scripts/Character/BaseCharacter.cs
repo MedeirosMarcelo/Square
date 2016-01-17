@@ -51,7 +51,7 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     protected void Move() {
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
 
         if (direction == Vector3.zero) {
             velocity.x = Mathf.Lerp(velocity.x, 0, deceleration);
