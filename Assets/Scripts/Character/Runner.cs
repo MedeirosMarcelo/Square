@@ -8,7 +8,6 @@ public class Runner : BaseCharacter {
 
     protected override void Start() {
         base.Start();
-        input = new ControllerInput(ControllerId.One);
         name = "Runner";
         type = CharacterType.Runner;
         respawnDelay = gameManager.currentMap.runnerRespawnDelay;
@@ -85,6 +84,7 @@ public class Runner : BaseCharacter {
     public override void Die(string killerTag) {
         DropFlag();
         EnterState(CharacterState.Dead);
+       // gameManager.StartNextRound();
         base.Die(killerTag);
     }
 }

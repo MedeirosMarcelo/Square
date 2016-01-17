@@ -41,6 +41,7 @@ public class BaseCharacter : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
+        input = new ControllerInput(player.Controller);
     }
 
     public virtual void Reset() {
@@ -50,7 +51,7 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     protected void Move() {
-        Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         if (direction == Vector3.zero) {
             velocity.x = Mathf.Lerp(velocity.x, 0, deceleration);
@@ -73,7 +74,7 @@ public class BaseCharacter : MonoBehaviour {
         //                                           200 - size.z),
         //                          Mathf.Clamp(newPosition.z, -200 + size.z,
         //                                           200 - size.z));
-        transform.position = newPosition;
+        rigidbody.MovePosition(newPosition);
     }
 
     protected void StartRespawn() {

@@ -324,6 +324,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6571946, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
+    - target: {fileID: 6588442, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
+    - target: {fileID: 6592514, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
+    - target: {fileID: 6582150, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
+    - target: {fileID: 6556818, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
+    - target: {fileID: 6582150, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c282b40a3d8579a4384128bb35708895, type: 2}
   m_IsPrefabParent: 0

@@ -2,25 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MatchData {
+public static class MatchData {
 
-    public Queue<CharacterType> CharacterRotation { get; private set; }
-    public Dictionary<ControllerId, int> PlayerScore { get; set; }
-    public int[] KillScore { get; set; }
+    public static Queue<CharacterType> CharacterRotation { get; private set; }
+    public static Dictionary<ControllerId, int> PlayerScore { get; set; }
+    public static int[] KillScore { get; set; }
 
-    public MatchData() {
+    static MatchData() {
+        Reload();
+    }
+
+    public static void Reload() {
         LoadDictionaries();
         LoadCharacterRotation();
     }
 
-    void LoadDictionaries() {
+    static void LoadDictionaries() {
         PlayerScore = new Dictionary<ControllerId, int>();
         foreach(Player pl in PlayerManager.GetPlayerList()){
             PlayerScore.Add(pl.Controller, 0);
         }
     }
 
-    void LoadCharacterRotation() {
+    static void LoadCharacterRotation() {
         CharacterRotation = new Queue<CharacterType>();
         CharacterRotation.Enqueue(CharacterType.Runner);
         CharacterRotation.Enqueue(CharacterType.Bomber);
@@ -30,14 +34,12 @@ public class MatchData {
         CharacterRotation = RandomizeList(CharacterRotation);
     }
 
-    public CharacterType GetCharacterInRotation() {
-
+    public static void RotateCharacters() {
         CharacterType type = CharacterRotation.Dequeue();
         CharacterRotation.Enqueue(type);
-        return CharacterRotation.Peek();
     }
 
-    Queue<CharacterType> RandomizeList(Queue<CharacterType> playerList) {
+    static Queue<CharacterType> RandomizeList(Queue<CharacterType> playerList) {
         //Implement
         return playerList;
     }

@@ -14,7 +14,6 @@ public class Bomber : BaseCharacter {
 
     protected override void Start() {
         base.Start();
-        input = new ControllerInput(ControllerId.Two);
         explosion = transform.Find("Explosion").GetComponent<Explosion>();
         name = "Bomber";
         type = CharacterType.Bomber;

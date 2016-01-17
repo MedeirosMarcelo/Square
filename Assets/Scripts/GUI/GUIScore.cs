@@ -14,6 +14,6 @@ public class GUIScore : MonoBehaviour {
     }
 
     void Update() {
-        scoreValue.text = GameManager.Match.PlayerScore[controller].ToString();
+        scoreValue.text = MatchData.PlayerScore[controller].ToString();
     }
 }

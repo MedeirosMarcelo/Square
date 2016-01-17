@@ -12,7 +12,6 @@ public enum GameState {
 public class GameManager : MonoBehaviour {
 
     public IList<Player> playerList = new List<Player>();
-    public static MatchData Match = new MatchData();
     public byte maxScore = 5;
     public float roundClock;
     public Map currentMap;
@@ -36,24 +35,27 @@ public class GameManager : MonoBehaviour {
     }
 
     void LoadPlayers() {
-        Vector3 position;
-        CharacterType type;
         int r = 0;
         int b = 0;
         int i = 0;
+        Vector3 position;
+        CharacterType type;
+        MatchData.RotateCharacters();
         foreach (Player pl in PlayerManager.GetPlayerList()) {
-            type = Match.GetCharacterInRotation();
+            type = MatchData.CharacterRotation.Peek();
             if (type == CharacterType.Runner) { i = r; r++; }
             if (type == CharacterType.Bomber) { i = b; b++; }
             position = currentMap.GetSpawnPosition(type, i);
             SpawnPlayer(pl, type, position);
+            MatchData.RotateCharacters();
         }
     }
 
     public void Score(ControllerId controller) {
-        Debug.Log(Match.PlayerScore[controller]);
-        Match.PlayerScore[controller] += 1;
-        if (Match.PlayerScore[controller] < maxScore) {
+        MatchData.PlayerScore[controller] += 1;
+        Debug.Log(MatchData.PlayerScore[controller]);
+        Debug.Log(controller);
+        if (MatchData.PlayerScore[controller] < maxScore) {
             StartNextRound();
         }
         else {
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour {
         roundClock = timer.GetTimeDecreasing();
     }
 
-    void StartNextRound() {
+    public void StartNextRound() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -196,7 +196,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101146}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780aa01627fe00d44b907ad71027b6a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed_Walk: 15
-  acceleration_Walk: 0.1
-  deceleration_Walk: 0.05
+  maxSpeed: 15
+  acceleration: 0.1
+  deceleration: 0.05
   type: 0
   canControl: 1
   canMove: 1
@@ -274,6 +274,11 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6101b3f493f26244ba654a616356695f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101146}

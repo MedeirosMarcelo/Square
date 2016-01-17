@@ -7,22 +7,22 @@ public static class PlayerManager {
     static IList<Player> PlayerList = new List<Player>();
 
     static PlayerManager() {
-        AddPlayer(ControllerId.One, "");
-        AddPlayer(ControllerId.Two, "");
-        AddPlayer(ControllerId.Three, "");
-        AddPlayer(ControllerId.Four, "");
+        AddPlayer(ControllerId.Four, "4");
+        AddPlayer(ControllerId.Three, "3");
+        AddPlayer(ControllerId.Two, "2");
+        AddPlayer(ControllerId.One, "1");
     }
 
     public static void AddPlayer(ControllerId control, string name) {
-	    Player pl = new Player(control, name);
-	    PlayerList.Add(pl);
+        Player pl = new Player(control, name);
+        PlayerList.Add(pl);
     }
 
     public static void RemovePlayer(Player player) {
-	    PlayerList.Remove(player);
+        PlayerList.Remove(player);
     }
 
     public static IList<Player> GetPlayerList() {
-	    return PlayerList;
+        return PlayerList;
     }
 }
