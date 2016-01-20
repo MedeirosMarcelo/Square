@@ -43,6 +43,9 @@ public class DebugInput : MonoBehaviour {
             switch (ControllerInput.mode) {
                 default:
                 case ControllerMode.Smooth:
+                    ControllerInput.mode = ControllerMode.SmoothThreshold;
+                    break;
+                case ControllerMode.SmoothThreshold:
                     ControllerInput.mode = ControllerMode.EigthWays;
                     break;
                 case ControllerMode.EigthWays:

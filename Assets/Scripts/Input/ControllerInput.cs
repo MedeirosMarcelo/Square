@@ -10,9 +10,10 @@ public enum ControllerId : int {
 
 public enum ControllerMode {
     Smooth,
+    SmoothThreshold,
     EigthWays,
     EigthWaysNormalized,
-    FourWays,
+    FourWays
 }
 
 
@@ -37,11 +38,15 @@ public class ControllerInput : BaseInput {
         explode = false;
     }
 
-    private float axisThreshold = 0.45f;
+    private float axisThreshold = 0.55f;
     private void ProcessInput() {
         switch (mode) {
             default:
             case ControllerMode.Smooth:
+                break;
+            case ControllerMode.SmoothThreshold:
+                horizontal = (Mathf.Abs(horizontal) < axisThreshold) ? 0f : horizontal;
+                vertical = (Mathf.Abs(vertical) < axisThreshold) ? 0f : vertical;
                 break;
 
             case ControllerMode.EigthWays:

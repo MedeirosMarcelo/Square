@@ -50,8 +50,9 @@ public class BaseCharacter : MonoBehaviour {
         State = CharacterState.Alive;
     }
 
-    protected void Move() {
+   protected void Move() {
         Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
+
 
         if (direction == Vector3.zero) {
             velocity.x = Mathf.Lerp(velocity.x, 0, deceleration);
@@ -69,14 +70,25 @@ public class BaseCharacter : MonoBehaviour {
         velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
         Vector3 newPosition = transform.position + (velocity * maxSpeed) * Time.deltaTime;
 
-        //Clamp position to scene borders
-        //transform.position = new Vector2(Mathf.Clamp(newPosition.x, -200 + size.x,
-        //                                           200 - size.z),
-        //                          Mathf.Clamp(newPosition.z, -200 + size.z,
-        //                                           200 - size.z));
         rigidbody.MovePosition(newPosition);
+        Forward();
     }
 
+    protected void Forward() {
+        var direction = new Vector2(input.horizontal, input.vertical);
+        if (direction.magnitude < 0.75f) {
+            return;
+        }
+
+        Debug.Log("dir" + direction);
+
+        if (Mathf.Abs(input.horizontal) >=  Mathf.Abs(input.vertical)) {
+            transform.forward = new Vector3(input.horizontal, 0f, 0f);
+        } else {
+            transform.forward = new Vector3(0f, 0f, input.vertical);
+        }
+    }
+ 
     protected void StartRespawn() {
         if (respawnTimer.Run(respawnDelay)) {
             Respawn();
