@@ -21,4 +21,9 @@ public class BaseInput {
     // must be called each FixedUpdate after consuming all input;
     public virtual void FixedUpdate() {
     }
+
+    // get debug msg;
+    public virtual string DebugMsg() {
+        return (name + ":  H=" + horizontal + "  V=" + vertical + "  E=" + explode);
+    }
 }
