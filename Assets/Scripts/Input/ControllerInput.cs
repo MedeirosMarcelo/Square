@@ -19,11 +19,10 @@ public enum ControllerMode {
 
 public class ControllerInput : BaseInput {
     public ControllerId id { get; private set; }
-    public static ControllerMode mode;
+    public static ControllerMode mode = ControllerMode.SmoothThreshold;
 
     public ControllerInput(ControllerId id) {
         this.id = id;
-        mode = ControllerMode.Smooth;
         name = "Controller " + id;
     }
 

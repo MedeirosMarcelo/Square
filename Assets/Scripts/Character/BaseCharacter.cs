@@ -79,9 +79,6 @@ public class BaseCharacter : MonoBehaviour {
         if (direction.magnitude < 0.75f) {
             return;
         }
-
-        Debug.Log("dir" + direction);
-
         if (Mathf.Abs(input.horizontal) >=  Mathf.Abs(input.vertical)) {
             transform.forward = new Vector3(input.horizontal, 0f, 0f);
         } else {
@@ -116,7 +113,7 @@ public class BaseCharacter : MonoBehaviour {
         }
         set {
             baseColor = value;
-            model.GetComponent<SkinnedMeshRenderer>().material.color = baseColor;
+            //model.GetComponent<SkinnedMeshRenderer>().material.color = baseColor;
         }
     }
 }
