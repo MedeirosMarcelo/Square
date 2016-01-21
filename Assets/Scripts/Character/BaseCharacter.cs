@@ -116,7 +116,7 @@ public class BaseCharacter : MonoBehaviour {
         }
         set {
             baseColor = value;
-            transform.Find("Model").GetComponent<MeshRenderer>().material.color = baseColor;
+            model.GetComponent<SkinnedMeshRenderer>().material.color = baseColor;
         }
     }
 }
