@@ -11,7 +11,7 @@ public enum GameState {
 
 public class GameManager : MonoBehaviour {
 
-    public IList<Player> playerList = new List<Player>();
+    public IList<BaseCharacter> characterList = new List<BaseCharacter>();
     public byte maxScore = 5;
     public float roundClock;
     public Map currentMap;
@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour {
         GameObject pl = (GameObject)Instantiate(GetCharacterPrefab(type), position, transform.rotation);
         pl.GetComponent<BaseCharacter>().player = player;
         player.Character = pl.GetComponent<BaseCharacter>();
+        characterList.Add(player.Character);
     }
 
     GameObject GetCharacterPrefab(CharacterType type) {

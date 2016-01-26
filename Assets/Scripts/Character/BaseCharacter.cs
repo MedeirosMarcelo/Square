@@ -22,6 +22,8 @@ public class BaseCharacter : MonoBehaviour {
     public BaseInput input;
     public bool canControl = true;
     public bool canMove = true;
+    public Rigidbody rigidbody;
+    public Vector3 publicVelocity;
 
     protected CharacterState State {get; set;}
     protected float respawnDelay;
@@ -30,18 +32,22 @@ public class BaseCharacter : MonoBehaviour {
     [SerializeField]
     Color baseColor = Color.white;
 
-    Vector3 velocity;
     Timer respawnTimer = new Timer();
     Animator animator = new Animator();
     GameObject model;
-    Rigidbody rigidbody;
+    Vector3 velocity;
 
     protected virtual void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
-        input = new ControllerInput(player.Controller);
+        if (player != null) {
+            input = new ControllerInput(player.Controller);
+        }
+        else {
+            input = new ControllerInput(ControllerId.One);
+        }
     }
 
     public virtual void Reset() {
@@ -68,6 +74,7 @@ public class BaseCharacter : MonoBehaviour {
         }
 
         velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
+        velocity += publicVelocity;
         Vector3 newPosition = transform.position + (velocity * maxSpeed) * Time.deltaTime;
 
         rigidbody.MovePosition(newPosition);
