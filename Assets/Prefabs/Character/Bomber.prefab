@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 172402}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 445492}
   m_RootOrder: 0
@@ -220,6 +220,8 @@ MonoBehaviour:
   type: 0
   canControl: 1
   canMove: 1
+  rigidbody: {fileID: 0}
+  publicVelocity: {x: 0, y: 0, z: 0}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   explosion: {fileID: 11490242}
 --- !u!114 &11490242
@@ -276,7 +278,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
-  m_Mesh: {fileID: 4300000, guid: 06d34f7112cacc04c88b442bd70075f0, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
