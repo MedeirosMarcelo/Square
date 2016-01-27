@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Bandana
-  m_Shader: {fileID: 4800000, guid: 6fe722b461b7e8b42ba3059ab4f54544, type: 3}
+  m_Name: Bomber_Armature_texture
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -93,10 +93,6 @@ Material:
         second: 0.5
       data:
         first:
-          name: PixelSnap
-        second: 0
-      data:
-        first:
           name: _Parallax
         second: 0.02
       data:
@@ -139,4 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.6102941, g: 0, b: 0.0006102499, a: 1}
+        second: {r: 0.8000001, g: 0.5090887, b: 0.003962734, a: 1}
