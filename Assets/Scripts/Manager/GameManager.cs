@@ -11,7 +11,8 @@ public enum GameState {
 
 public class GameManager : MonoBehaviour {
 
-    public IList<BaseCharacter> characterList = new List<BaseCharacter>();
+    public IList<Bomber> bomberList = new List<Bomber>();
+    public Runner runner;
     public byte maxScore = 5;
     public float roundClock;
     public Map currentMap;
@@ -22,9 +23,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject bomberPrefab;
 
+    GameCanvas canvas;
     Timer timer = new Timer();
 
     void Awake() {
+        canvas = GameObject.FindWithTag("Game Canvas").GetComponent<GameCanvas>();
         State = GameState.Loading;
         LoadPlayers();
         State = GameState.Playing;
@@ -83,7 +86,8 @@ public class GameManager : MonoBehaviour {
         GameObject pl = (GameObject)Instantiate(GetCharacterPrefab(type), position, transform.rotation);
         pl.GetComponent<BaseCharacter>().player = player;
         player.Character = pl.GetComponent<BaseCharacter>();
-        characterList.Add(player.Character);
+        if (type == CharacterType.Bomber) bomberList.Add(player.Character.GetComponent<Bomber>());
+        else if (type == CharacterType.Runner) runner = player.Character.GetComponent<Runner>();
     }
 
     GameObject GetCharacterPrefab(CharacterType type) {
@@ -94,5 +98,13 @@ public class GameManager : MonoBehaviour {
             case CharacterType.Bomber:
                 return bomberPrefab;
         }
+    }
+
+    void ShowModifierChoice() {
+        
+    }
+
+    void ShowNextRunner() {
+        
     }
 }

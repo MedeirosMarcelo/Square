@@ -5,6 +5,7 @@ public class Modifier : MonoBehaviour {
 
     public bool Active { get; set; }
     public BaseCharacter Owner { get; set; }
+    public Sprite icon;
 
 	// Use this for initialization
     protected void Start() {
