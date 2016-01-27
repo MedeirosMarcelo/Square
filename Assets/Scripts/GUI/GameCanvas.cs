@@ -6,6 +6,8 @@ public class GameCanvas : MonoBehaviour {
 
     GameManager gameManager;
     [SerializeField] Text clockText;
+    [SerializeField] GameObject modifierChoice;
+    [SerializeField] GameObject nextRunner;
 
     void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
@@ -17,5 +19,13 @@ public class GameCanvas : MonoBehaviour {
 
     void ShowClock(){
         clockText.text = gameManager.roundClock.ToString();
+    }
+
+    public void ShowModifierChoice(){
+        modifierChoice.SetActive(true);
+    }
+
+    public void ShowNextRunner() {
+        nextRunner.SetActive(true);
     }
 }

@@ -23,9 +23,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject bomberPrefab;
 
+    GameCanvas canvas;
     Timer timer = new Timer();
 
     void Awake() {
+        canvas = GameObject.FindWithTag("Game Canvas").GetComponent<GameCanvas>();
         State = GameState.Loading;
         LoadPlayers();
         State = GameState.Playing;
@@ -96,5 +98,13 @@ public class GameManager : MonoBehaviour {
             case CharacterType.Bomber:
                 return bomberPrefab;
         }
+    }
+
+    void ShowModifierChoice() {
+        
+    }
+
+    void ShowNextRunner() {
+        
     }
 }
