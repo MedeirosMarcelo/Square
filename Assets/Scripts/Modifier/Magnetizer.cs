@@ -15,11 +15,9 @@ public class Magnetizer : Modifier {
 
     void Update() {
         if (Active) {
-            foreach (BaseCharacter character in gameManager.characterList) {
-                if (character.type == CharacterType.Bomber) {
-                    if (InsideAreaOfEffect(character)) {
-                        Pull(character);
-                    }
+            foreach (Bomber bomber in gameManager.bomberList) {
+                if (InsideAreaOfEffect(bomber)) {
+                    Pull(bomber);
                 }
             }
         }
@@ -45,13 +43,13 @@ public class Magnetizer : Modifier {
         //}
         speedByDistance = 1 - (distance / effectDistance);
         Debug.Log(speedByDistance);
-      //  velocity += direction * speedByDistance;
-     //   target.publicVelocity = velocity;
+        //  velocity += direction * speedByDistance;
+        //   target.publicVelocity = velocity;
 
-      //  velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
-       // Vector3 newPosition = transform.position + (velocity * pullForce) * Time.deltaTime;
+        //  velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
+        // Vector3 newPosition = transform.position + (velocity * pullForce) * Time.deltaTime;
 
-    //    target.rigidbody.MovePosition(target.transform.position + direction * pullForce * Time.deltaTime);
+        //    target.rigidbody.MovePosition(target.transform.position + direction * pullForce * Time.deltaTime);
 
         velocity += direction * 0.01f;
         target.rigidbody.AddForce(velocity, ForceMode.Impulse);

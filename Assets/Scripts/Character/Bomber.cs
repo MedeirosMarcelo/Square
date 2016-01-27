@@ -62,21 +62,6 @@ public class Bomber : BaseCharacter {
         base.Reset();
     }
 
-    void UpdateExplosionTrigger() {
-        if (explosionTriggered) {
-            bool ended = false;
-            triggerTimer.TimerCounter(explosionTime, out ended);
-            if (ended) {
-                explosion.Explode();
-            }
-        }
-        else {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                explosionTriggered = true;
-            }
-        }
-    }
-
     void ControlInput() {
         if (input.explode) {
             explosion.TriggerBomb(this);
