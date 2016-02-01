@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa785b393f2f8547916ce5845e86ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpObject: {fileID: 11423224, guid: 8b81e9f1d0c1d7e469129111ff879903, type: 2}
+  icon: {fileID: 21300000, guid: 9178a89bcaa19b84cbe775c5c57b88d2, type: 3}
   duration: 5
   scale: 0.5
   speedBonus: 10
@@ -105,6 +107,16 @@ Prefab:
       propertyPath: effectDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pickUpObject
+      value: 
+      objectReference: {fileID: 11423224, guid: 8b81e9f1d0c1d7e469129111ff879903,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 9178a89bcaa19b84cbe775c5c57b88d2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112484}

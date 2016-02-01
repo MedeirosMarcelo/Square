@@ -47,11 +47,42 @@ public class Map : MonoBehaviour {
     ///<para>Ommitting the index param will return a random valid spawn position.</para>
     ///</summary>
     public Vector3 GetSpawnPosition(CharacterType type) {
+        int rnd = Random.Range(0, bomberSpawns.Count);
         if (type == CharacterType.Runner) {
-            return runnerSpawns[Random.Range(0, runnerSpawns.Count)];
+            return runnerSpawns[rnd];
         }
         else {
-            return bomberSpawns[Random.Range(0, bomberSpawns.Count)];
+            return SearchFarthestSpawn(bomberSpawns);
         }
+    }
+
+    Vector3 SearchFarthestSpawn(IList<Vector3> spawnList) {
+        Vector3 spawnPoint;
+        Vector3 character;
+        float distance = Mathf.NegativeInfinity;
+        float farthestSpawnDistance = Mathf.NegativeInfinity;
+        float spawnClosestChar;
+        Vector3 farthestSpawn = new Vector3(0f, 1f, 0f);
+
+        for (int i = 0; i < spawnList.Count; i++) {
+            spawnClosestChar = Mathf.Infinity;
+            for (int j = 0; j < PlayerManager.GetPlayerList().Count; j++) {
+
+                if (PlayerManager.GetPlayerList()[j].Character.State == CharacterState.Alive) {
+                    spawnPoint = spawnList[i];
+                    character = PlayerManager.GetPlayerList()[j].Character.transform.position;
+                    distance = Vector3.Distance(spawnPoint, character);
+
+                    if (distance < spawnClosestChar) {
+                        spawnClosestChar = distance;
+                    }
+                }
+            }
+            if (spawnClosestChar >= farthestSpawnDistance) {
+                farthestSpawnDistance = spawnClosestChar;
+                farthestSpawn = spawnList[i];
+            }
+        }
+        return farthestSpawn;
     }
 }

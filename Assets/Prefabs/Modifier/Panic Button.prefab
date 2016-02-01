@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d075a54c55f9b8148aee502cb9faa919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpObject: {fileID: 11423224, guid: b118ad1e5f5bfe9449039c29fe347615, type: 2}
+  icon: {fileID: 21300000, guid: 6eda0df2e3cf18e4c91a4a2cff5ddbf3, type: 3}
 --- !u!135 &13574402
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -102,6 +104,16 @@ Prefab:
       propertyPath: effectDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6eda0df2e3cf18e4c91a4a2cff5ddbf3,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: pickUpObject
+      value: 
+      objectReference: {fileID: 11423224, guid: b118ad1e5f5bfe9449039c29fe347615,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112484}
