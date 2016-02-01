@@ -24,8 +24,9 @@ public class BaseCharacter : MonoBehaviour {
     public bool canMove = true;
     public Rigidbody rigidbody;
     public Vector3 publicVelocity;
+    public CharacterState State { get; protected set; }
+    public ControllerId id;
 
-    protected CharacterState State {get; set;}
     protected float respawnDelay;
     protected GameManager gameManager;
 
@@ -48,6 +49,7 @@ public class BaseCharacter : MonoBehaviour {
         else {
             input = new ControllerInput(ControllerId.One);
         }
+        id = player.Controller;
     }
 
     public virtual void Reset() {
@@ -74,7 +76,6 @@ public class BaseCharacter : MonoBehaviour {
         }
 
         velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -1f, 1f), Mathf.Clamp(velocity.z, -1f, 1f));
-        velocity += publicVelocity;
         Vector3 newPosition = transform.position + (velocity * maxSpeed) * Time.deltaTime;
 
         rigidbody.MovePosition(newPosition);
@@ -100,7 +101,7 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     public void Respawn() {
-        if (gameManager.State == GameState.Playing) {
+        if (gameManager.State == GameState.Play) {
            // Reset();
            // transform.position = gameManager.currentMap.GetSpawnPosition(type);
             gameManager.SpawnPlayer(player, type, gameManager.currentMap.GetSpawnPosition(type));
@@ -112,6 +113,7 @@ public class BaseCharacter : MonoBehaviour {
         model.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
         rigidbody.velocity = Vector3.zero;
+        State = CharacterState.Dead;
     }
 
     public Color BaseColor {

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public enum GameState {
-    Loading,
-    Playing,
+    Load,
+    Intro,
+    ChooseMod,
+    Play,
     End
 }
 
@@ -24,17 +26,55 @@ public class GameManager : MonoBehaviour {
     GameObject bomberPrefab;
 
     GameCanvas canvas;
+    ModifierSpawner modSpawner;
     Timer timer = new Timer();
 
     void Awake() {
         canvas = GameObject.FindWithTag("Game Canvas").GetComponent<GameCanvas>();
-        State = GameState.Loading;
-        LoadPlayers();
-        State = GameState.Playing;
+        modSpawner = currentMap.transform.Find("Modifier Spawns").GetComponent<ModifierSpawner>();
+        EnterState(GameState.Load);
     }
 
     void Update() {
-        RoundTimer();
+        StateMachine();
+    }
+
+    void StateMachine() {
+        switch (State) {
+            default:
+            case GameState.Load:
+                break;
+            case GameState.Intro:
+                break;
+            case GameState.ChooseMod:
+                break;
+            case GameState.Play:
+                RoundTimer();
+                break;
+            case GameState.End:
+                break;
+        }
+    }
+
+    void EnterState(GameState newState) {
+        State = newState;
+        switch (State) {
+            default:
+            case GameState.Load:
+                LoadPlayers();
+                break;
+            case GameState.Intro:
+                break;
+            case GameState.ChooseMod:
+                ChooseMod();
+                break;
+            case GameState.Play:
+                StartRound();
+                break;
+            case GameState.End:
+                End();
+                break;
+        }
     }
 
     void LoadPlayers() {
@@ -51,7 +91,9 @@ public class GameManager : MonoBehaviour {
             position = currentMap.GetSpawnPosition(type, i);
             SpawnPlayer(pl, type, position);
             MatchData.RotateCharacters();
+            pl.Character.canControl = false;
         }
+        EnterState(GameState.ChooseMod);
     }
 
     public void Score(ControllerId controller) {
@@ -73,12 +115,21 @@ public class GameManager : MonoBehaviour {
         roundClock = timer.GetTimeDecreasing();
     }
 
+    void StartRound() {
+        foreach (Player pl in PlayerManager.GetPlayerList()) {
+            pl.Character.canControl = true;
+        }
+    }
+
     public void StartNextRound() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void EndMatch() {
-        State = GameState.End;
+        EnterState(GameState.End);
+    }
+
+    void End() {
         SceneManager.LoadScene("ResultScreen");
     }
 
@@ -100,11 +151,19 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void ShowModifierChoice() {
-        
+    void ChooseMod() {
+        if (ModifierManager.AnalyzeScoreForBalance()) {
+            canvas.ShowModifierChoice(true);
+        }
+        else {
+            EnterState(GameState.Play);
+        }
     }
 
-    void ShowNextRunner() {
-        
+    public void BuildChosenMods(IList<Modifier> mods) {
+        foreach (Modifier mod in mods) {
+            modSpawner.Spawn(mod);
+        }
+        EnterState(GameState.Play);
     }
 }

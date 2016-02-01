@@ -21,11 +21,11 @@ public class GameCanvas : MonoBehaviour {
         clockText.text = gameManager.roundClock.ToString();
     }
 
-    public void ShowModifierChoice(){
-        modifierChoice.SetActive(true);
+    public void ShowModifierChoice(bool show){
+        modifierChoice.SetActive(show);
     }
 
-    public void ShowNextRunner() {
-        nextRunner.SetActive(true);
+    public void ShowNextRunner(bool show) {
+        nextRunner.SetActive(show);
     }
 }
