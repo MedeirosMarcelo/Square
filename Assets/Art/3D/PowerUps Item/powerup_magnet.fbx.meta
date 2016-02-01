@@ -1,26 +1,26 @@
 fileFormatVersion: 2
-guid: ad7272b021dbff94fb3eeed04e043c18
-timeCreated: 1453771528
+guid: 315a217a0cd80694fad820075d7a56b0
+timeCreated: 1454343167
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Armature_PowerUp Football Helmet
+    100000: Armature
     100002: Bone
     100004: Bone_end
-    100006: FootballHelmet.001_Cube.001
+    100006: Cube.001
     100008: //RootNode
-    400000: Armature_PowerUp Football Helmet
+    400000: Armature
     400002: Bone
     400004: Bone_end
-    400006: FootballHelmet.001_Cube.001
+    400006: Cube.001
     400008: //RootNode
-    4300000: FootballHelmet.001_Cube.001
-    7400000: Armature_PowerUp Football Helmet|PowerUp Base_Spawn
-    7400002: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Idle
-    7400004: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Spawn
+    4300000: Cube.001
+    7400000: Armature|PowerUp Base_Spawn
+    7400002: Armature|PowerUp Magnet_Idle
+    7400004: Armature|PowerUp Magnet_Spawn
     9500000: //RootNode
-    13700000: FootballHelmet.001_Cube.001
+    13700000: Cube.001
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,17 +43,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Idle
-      takeName: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Idle
+      name: Armature|PowerUp Magnet_Idle
+      takeName: Armature|PowerUp Magnet_Idle
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -69,22 +69,22 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature_PowerUp Football Helmet
+      - path: Armature
         weight: 1
-      - path: Armature_PowerUp Football Helmet/Bone
+      - path: Armature/Bone
         weight: 1
-      - path: Armature_PowerUp Football Helmet/Bone/Bone_end
+      - path: Armature/Bone/Bone_end
         weight: 1
-      - path: FootballHelmet.001_Cube.001
+      - path: Cube.001
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Spawn
-      takeName: Armature_PowerUp Football Helmet|PowerUp Football Helmet_Spawn
+      name: Armature|PowerUp Magnet_Spawn
+      takeName: Armature|PowerUp Magnet_Spawn
       firstFrame: 0
-      lastFrame: 33
+      lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -107,13 +107,13 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Armature_PowerUp Football Helmet
+      - path: Armature
         weight: 1
-      - path: Armature_PowerUp Football Helmet/Bone
+      - path: Armature/Bone
         weight: 1
-      - path: Armature_PowerUp Football Helmet/Bone/Bone_end
+      - path: Armature/Bone/Bone_end
         weight: 1
-      - path: FootballHelmet.001_Cube.001
+      - path: Cube.001
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
@@ -139,7 +139,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
