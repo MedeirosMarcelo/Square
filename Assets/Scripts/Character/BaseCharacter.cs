@@ -34,12 +34,21 @@ public class BaseCharacter : MonoBehaviour {
     Color baseColor = Color.white;
 
     Timer respawnTimer = new Timer();
-    Animator animator = new Animator();
+    Animator animator;
+    ParticleSystem runningTrailSmall;
+    ParticleSystem runningTrailLarge;
+    ParticleSystem.EmissionModule smallEmission;
+    ParticleSystem.EmissionModule largeEmission;
     GameObject model;
     Vector3 velocity;
 
     protected virtual void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
+        animator = transform.Find("Model").GetComponent<Animator>();
+        runningTrailSmall = transform.Find("Running Trail_02").GetComponent<ParticleSystem>();
+        runningTrailLarge = transform.Find("Running Trail_01").GetComponent<ParticleSystem>();
+        smallEmission = runningTrailSmall.emission;
+        largeEmission = runningTrailLarge.emission;
         rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
@@ -52,15 +61,18 @@ public class BaseCharacter : MonoBehaviour {
         id = player.Controller;
     }
 
+    protected virtual void Update() {
+        ShowRunningTrail();
+    }
+
     public virtual void Reset() {
         model.SetActive(true);
         GetComponent<BoxCollider>().enabled = true;
         State = CharacterState.Alive;
     }
 
-   protected void Move() {
+    protected void Move() {
         Vector3 direction = new Vector3(input.horizontal, 0, input.vertical);
-
 
         if (direction == Vector3.zero) {
             velocity.x = Mathf.Lerp(velocity.x, 0, deceleration);
@@ -80,6 +92,7 @@ public class BaseCharacter : MonoBehaviour {
 
         rigidbody.MovePosition(newPosition);
         Forward();
+        if (type == CharacterType.Runner) animator.SetFloat("Velocity", (input.horizontal + input.vertical) / 2f);
     }
 
     protected void Forward() {
@@ -87,13 +100,14 @@ public class BaseCharacter : MonoBehaviour {
         if (direction.magnitude < 0.75f) {
             return;
         }
-        if (Mathf.Abs(input.horizontal) >=  Mathf.Abs(input.vertical)) {
+        if (Mathf.Abs(input.horizontal) >= Mathf.Abs(input.vertical)) {
             transform.forward = new Vector3(input.horizontal, 0f, 0f);
-        } else {
+        }
+        else {
             transform.forward = new Vector3(0f, 0f, input.vertical);
         }
     }
- 
+
     protected void StartRespawn() {
         if (respawnTimer.Run(respawnDelay)) {
             Respawn();
@@ -102,8 +116,8 @@ public class BaseCharacter : MonoBehaviour {
 
     public void Respawn() {
         if (gameManager.State == GameState.Play) {
-           // Reset();
-           // transform.position = gameManager.currentMap.GetSpawnPosition(type);
+            // Reset();
+            // transform.position = gameManager.currentMap.GetSpawnPosition(type);
             gameManager.SpawnPlayer(player, type, gameManager.currentMap.GetSpawnPosition(type));
             Destroy(this.gameObject);
         }
@@ -123,6 +137,21 @@ public class BaseCharacter : MonoBehaviour {
         set {
             baseColor = value;
             //model.GetComponent<SkinnedMeshRenderer>().material.color = baseColor;
+        }
+    }
+
+    void ShowRunningTrail() {
+        if (input.horizontal != 0 || input.vertical != 0) {
+            smallEmission.enabled = true;
+            largeEmission.enabled = true;
+           // animator.SetBool("Running", true);
+        }
+        else {
+            if (smallEmission.enabled != false) {
+                smallEmission.enabled = false;
+                largeEmission.enabled = false;
+            //    animator.SetBool("Running", false);
+            }
         }
     }
 }

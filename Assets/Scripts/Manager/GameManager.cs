@@ -98,8 +98,6 @@ public class GameManager : MonoBehaviour {
 
     public void Score(ControllerId controller) {
         MatchData.PlayerScore[controller] += 1;
-        Debug.Log(MatchData.PlayerScore[controller]);
-        Debug.Log(controller);
         if (MatchData.PlayerScore[controller] < maxScore) {
             StartNextRound();
         }

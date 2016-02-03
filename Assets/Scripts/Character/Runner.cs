@@ -17,6 +17,7 @@ public class Runner : BaseCharacter {
         input.Update();
         StateMachine();
         input.FixedUpdate();
+        base.Update();
     }
 
     protected void StateMachine() {

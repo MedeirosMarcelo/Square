@@ -5,6 +5,8 @@ public class Explosion : MonoBehaviour {
 
     public float bombDelay = 1f;
     public float duration = 2f;
+    public Material mat;
+    public float matValue;
     GameObject explosion;
     Bomber bomber;
     Timer timer = new Timer();
@@ -13,10 +15,12 @@ public class Explosion : MonoBehaviour {
 
     void Start() {
         animator = GetComponent<Animator>();
+        
     }
 
     void Update() {
         ChangeBomberColor();
+        mat.SetFloat("_SliceAmount", matValue);
     }
 
     public void TriggerBomb(Bomber bomber) {

@@ -24,6 +24,7 @@ public class Bomber : BaseCharacter {
         input.Update();
         StateMachine();
         input.FixedUpdate();
+        base.Update();
     }
 
     protected void StateMachine() {
