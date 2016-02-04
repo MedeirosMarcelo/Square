@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19827492}
   - 199: {fileID: 19947280}
   m_Layer: 0
-  m_Name: Running Trail_02
+  m_Name: Running Trail_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
