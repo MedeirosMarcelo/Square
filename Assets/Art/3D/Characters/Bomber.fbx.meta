@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 96a4209554ec25e4f9ba230458e0b7c0
-timeCreated: 1453926209
+guid: b49d2b4826e4312429c88f369173628e
+timeCreated: 1454687916
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: ArmatureBomber
-    100002: Bomber
-    100004: //RootNode
+    100000: Bomber
+    100002: //RootNode
+    100004: BomberArmature
     100006: BoneBase
     100008: BoneFoot
     100010: BoneHat
     100012: BoneHat_end
     100014: BoneHead
-    400000: ArmatureBomber
-    400002: Bomber
-    400004: //RootNode
+    400000: Bomber
+    400002: //RootNode
+    400004: BomberArmature
     400006: BoneBase
     400008: BoneFoot
     400010: BoneHat
@@ -23,9 +23,7 @@ ModelImporter:
     400014: BoneHead
     4300000: Bomber
     7400000: Bomber_Idle
-    7400002: Bomber_StartRunnig
-    7400004: Bomber_Running
-    7400006: Bomber_Stoping
+    7400002: Bomber_Running
     9500000: //RootNode
     13700000: Bomber
   materials:
@@ -51,9 +49,9 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Bomber_Idle
-      takeName: ArmatureBomber|ArmatureAction
+      takeName: BomberArmature|ArmatureAction
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -76,116 +74,28 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArmatureBomber
-        weight: 1
-      - path: ArmatureBomber/BoneBase
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
-        weight: 1
       - path: Bomber
         weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Bomber_StartRunnig
-      takeName: ArmatureBomber|ArmatureAction
-      firstFrame: 11
-      lastFrame: 21
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
+      - path: BomberArmature
         weight: 1
-      - path: ArmatureBomber
+      - path: BomberArmature/BoneBase
         weight: 1
-      - path: ArmatureBomber/BoneBase
+      - path: BomberArmature/BoneBase/BoneFoot
         weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead
         weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat
         weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
-        weight: 1
-      - path: Bomber
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Bomber_Running
-      takeName: ArmatureBomber|ArmatureAction
-      firstFrame: 22
-      lastFrame: 32
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: ArmatureBomber
-        weight: 1
-      - path: ArmatureBomber/BoneBase
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
-        weight: 1
-      - path: Bomber
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Bomber_Stoping
-      takeName: ArmatureBomber|ArmatureAction
-      firstFrame: 33
-      lastFrame: 42
+      takeName: BomberArmature|ArmatureAction
+      firstFrame: 3
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -208,19 +118,19 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArmatureBomber
-        weight: 1
-      - path: ArmatureBomber/BoneBase
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat
-        weight: 1
-      - path: ArmatureBomber/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
-        weight: 1
       - path: Bomber
+        weight: 1
+      - path: BomberArmature
+        weight: 1
+      - path: BomberArmature/BoneBase
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
