@@ -54,11 +54,11 @@ public class BaseCharacter : MonoBehaviour {
         Reset();
         if (player != null) {
             input = new ControllerInput(player.Controller);
+            id = player.Controller;
         }
         else {
             input = new ControllerInput(ControllerId.One);
         }
-        id = player.Controller;
     }
 
     protected virtual void Update() {

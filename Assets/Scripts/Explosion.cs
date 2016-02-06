@@ -4,7 +4,7 @@ using System.Collections;
 public class Explosion : MonoBehaviour {
 
     public float bombDelay = 1f;
-    public float duration = 2f;
+    public float duration = 3f;
     public Material mat;
     public float matValue;
     GameObject explosion;
