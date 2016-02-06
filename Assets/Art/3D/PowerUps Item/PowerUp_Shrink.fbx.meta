@@ -1,35 +1,29 @@
 fileFormatVersion: 2
-guid: caf4900cdb9484e4d98845dd7a169d43
-timeCreated: 1454688306
+guid: a0d016aab42f8f448ad8a51d3d0720f3
+timeCreated: 1454699457
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: BaseBone
-    100002: BaseBone_end
-    100004: BoneFoot
-    100006: BoneHat
-    100008: BoneHat_end
-    100010: BoneHead
-    100012: BoneSpine
-    100014: Runner
-    100016: //RootNode
-    100018: RunnerArmature
-    400000: BaseBone
-    400002: BaseBone_end
-    400004: BoneFoot
-    400006: BoneHat
-    400008: BoneHat_end
-    400010: BoneHead
-    400012: BoneSpine
-    400014: Runner
-    400016: //RootNode
-    400018: RunnerArmature
-    4300000: Runner
-    7400000: Runner_Idle
-    7400002: Runner_Runing
+    100000: Bone
+    100002: Bone_end
+    100004: Camera
+    100006: Lamp
+    100008: //RootNode
+    100010: Shrink
+    100012: ShrinkArmature
+    400000: Bone
+    400002: Bone_end
+    400004: Camera
+    400006: Lamp
+    400008: //RootNode
+    400010: Shrink
+    400012: ShrinkArmature
+    4300000: Shrink
+    7400000: PowerUp_Shirink_Idle
+    7400002: PowerUp_Shrink_Start
     9500000: //RootNode
-    13700000: Runner
+    13700000: Shrink
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,10 +46,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Runner_Idle
-      takeName: RunnerArmature|ArmatureAction
-      firstFrame: 0
-      lastFrame: 0
+      name: PowerUp_Shirink_Idle
+      takeName: ShrinkArmature|ArmatureAction
+      firstFrame: 18
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -78,32 +72,26 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Runner
+      - path: Camera
         weight: 1
-      - path: RunnerArmature
+      - path: Lamp
         weight: 1
-      - path: RunnerArmature/BaseBone
+      - path: Shrink
         weight: 1
-      - path: RunnerArmature/BaseBone/BaseBone_end
+      - path: ShrinkArmature
         weight: 1
-      - path: RunnerArmature/BoneFoot
+      - path: ShrinkArmature/Bone
         weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat/BoneHat_end
+      - path: ShrinkArmature/Bone/Bone_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Runner_Runing
-      takeName: RunnerArmature|ArmatureAction
-      firstFrame: 3
-      lastFrame: 8
+      name: PowerUp_Shrink_Start
+      takeName: ShrinkArmature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -126,23 +114,17 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: Runner
+      - path: Camera
         weight: 1
-      - path: RunnerArmature
+      - path: Lamp
         weight: 1
-      - path: RunnerArmature/BaseBone
+      - path: Shrink
         weight: 1
-      - path: RunnerArmature/BaseBone/BaseBone_end
+      - path: ShrinkArmature
         weight: 1
-      - path: RunnerArmature/BoneFoot
+      - path: ShrinkArmature/Bone
         weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat
-        weight: 1
-      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat/BoneHat_end
+      - path: ShrinkArmature/Bone/Bone_end
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

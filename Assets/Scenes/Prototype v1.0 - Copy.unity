@@ -290,6 +290,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+<<<<<<< HEAD
+=======
 --- !u!1001 &1054112105
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +342,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfa4b069ca8641446b95231b4d7cc48a, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> origin/master
 --- !u!1001 &1410992020
 Prefab:
   m_ObjectHideFlags: 0
@@ -594,6 +597,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+<<<<<<< HEAD
+=======
 --- !u!1001 &2121304020
 Prefab:
   m_ObjectHideFlags: 0
@@ -640,4 +645,4 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c282b40a3d8579a4384128bb35708895, type: 2}
   m_IsPrefabParent: 0
-
+>>>>>>> origin/master
