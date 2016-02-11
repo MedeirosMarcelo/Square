@@ -179,4 +179,15 @@ public class GameManager : MonoBehaviour {
         }
         EnterState(GameState.Play);
     }
+
+    public List<BaseCharacter> GetCharacters()
+    {
+        List<BaseCharacter> list = new List<BaseCharacter>();
+        list.Add(runner);
+        foreach (Bomber bomber in bomberList)
+        {
+            list.Add((BaseCharacter)bomber);
+        }
+        return list;
+    }
 }

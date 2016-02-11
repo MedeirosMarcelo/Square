@@ -184,9 +184,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ed85891685e15449972d22a6066c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 32
+  minDistance: 20
   maxDistance: 40
   distance: 32
+  gameManager: {fileID: 1481861063}
+  margin: 2
+  lerpAmount: 5
+  frustum:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!1001 &821328459
 Prefab:
   m_ObjectHideFlags: 0
@@ -346,6 +355,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 821328459}
   m_Script: {fileID: 11500000, guid: f6df1ac299133c244983c6e2c1d55f03, type: 3}
+--- !u!114 &1481861063 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11484738, guid: a7bb35f6833230544a60da97dc9fd96b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1410992020}
+  m_Script: {fileID: 11500000, guid: 670e14ff3885ca445a371a4363610307, type: 3}
 --- !u!1001 &1813295295
 Prefab:
   m_ObjectHideFlags: 0
