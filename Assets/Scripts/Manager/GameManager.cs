@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
+        string b = "";
+        foreach (Bomber bomber in bomberList) {
+            b += bomber.name + " ";
+        }
+        Debug.Log(b);
         StateMachine();
     }
 
@@ -89,7 +94,7 @@ public class GameManager : MonoBehaviour {
             if (type == CharacterType.Runner) { i = r; r++; }
             if (type == CharacterType.Bomber) { i = b; b++; }
             position = currentMap.GetSpawnPosition(type, i);
-            SpawnPlayer(pl, type, position);
+            SpawnCharacter(pl, type, position);
             MatchData.RotateCharacters();
             pl.Character.canControl = false;
         }
@@ -131,12 +136,22 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("ResultScreen");
     }
 
-    public void SpawnPlayer(Player player, CharacterType type, Vector3 position) {
+    public GameObject SpawnCharacter(Player player, CharacterType type, Vector3 position) {
         GameObject pl = (GameObject)Instantiate(GetCharacterPrefab(type), position, transform.rotation);
         pl.GetComponent<BaseCharacter>().player = player;
         player.Character = pl.GetComponent<BaseCharacter>();
         if (type == CharacterType.Bomber) bomberList.Add(player.Character.GetComponent<Bomber>());
         else if (type == CharacterType.Runner) runner = player.Character.GetComponent<Runner>();
+        return pl;
+    }
+
+    public void RemoveCharacter(BaseCharacter character){
+        if (character.type == CharacterType.Bomber) {
+            bomberList.Remove((Bomber)character);
+        }
+        else if (character.type == CharacterType.Runner) {
+            runner = null;
+        }
     }
 
     GameObject GetCharacterPrefab(CharacterType type) {

@@ -8,13 +8,23 @@ public class Modifier : MonoBehaviour {
     public ModifierPickUp pickUpObject;
     public Sprite icon;
 
-	// Use this for initialization
     protected void Start() {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void PickUp(BaseCharacter owner) {
+        Owner = owner;
+        transform.SetParent(owner.transform);
+        transform.localPosition = new Vector3(0f, 0.64f, 0f);
+        Active = true;
+        Owner.PickUpModifier(this.gameObject);
+    }
+
+    void Remove() {
+        Owner.RemoveModifier(this.gameObject);
+    }
 }

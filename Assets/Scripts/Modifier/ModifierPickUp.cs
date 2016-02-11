@@ -20,11 +20,7 @@ public class ModifierPickUp : MonoBehaviour {
 
     public void PickUp(BaseCharacter owner) {
         GameObject mod = (GameObject)Instantiate(equipment);
-         mod.GetComponent<Modifier>().Owner = owner;
-         mod.transform.SetParent(owner.transform);
-         mod.transform.localPosition = new Vector3(0f, 0.64f, 0f);
-         mod.GetComponent<Modifier>().Active = true;
-        //animator.SetBool("Pickup", true);
+        mod.GetComponent<Modifier>().PickUp(owner);
         Destroy(this.gameObject, 0f);
     }
 

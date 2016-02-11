@@ -21,6 +21,7 @@ public class ModifierChoice : MonoBehaviour {
 	}
 
 	void Update () {
+        SelectModifier();
         CheckEndChoice();
 	}
 
@@ -28,6 +29,12 @@ public class ModifierChoice : MonoBehaviour {
         for (int i = 0; i < modSlot.Length; i++) {
             int rnd = Random.Range(0, 3);
             modSlot[i].sprite = modifier[rnd].icon;
+        }
+    }
+
+    void SelectModifier() {
+        if (Input.GetButtonDown("ExplodeC1")) {
+            EndChoice();
         }
     }
 

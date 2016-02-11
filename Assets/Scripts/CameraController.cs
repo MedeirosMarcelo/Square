@@ -7,8 +7,6 @@ public class CameraController : MonoBehaviour {
     public float maxDistance = 40f;
     public float distance = 32f;
 
-    public 
-
 	// Use this for initialization
 	void Start () {
 	

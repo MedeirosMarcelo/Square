@@ -144,14 +144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipment: {fileID: 112484, guid: 0d257a077e4493b49a6ae3953d9b961a, type: 2}
+  equipment: {fileID: 112484, guid: a8eeade3a6504ff409735055ebd05f33, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: equipment
+      value: 
+      objectReference: {fileID: 112484, guid: a8eeade3a6504ff409735055ebd05f33, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195136}

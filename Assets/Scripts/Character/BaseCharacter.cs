@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum CharacterState {
     Alive,
@@ -26,6 +27,7 @@ public class BaseCharacter : MonoBehaviour {
     public Vector3 publicVelocity;
     public CharacterState State { get; protected set; }
     public ControllerId id;
+    public IList<GameObject> activeModifier = new List<GameObject>();
 
     protected float respawnDelay;
     protected GameManager gameManager;
@@ -35,20 +37,22 @@ public class BaseCharacter : MonoBehaviour {
 
     Timer respawnTimer = new Timer();
     Animator animator;
-    ParticleSystem runningTrailSmall;
-    ParticleSystem runningTrailLarge;
+    //ParticleSystem runningTrailSmall;
+    //ParticleSystem runningTrailLarge;
     ParticleSystem.EmissionModule smallEmission;
     ParticleSystem.EmissionModule largeEmission;
+    GameObject deathParticle;
     GameObject model;
     Vector3 velocity;
 
     protected virtual void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         animator = transform.Find("Model").GetComponent<Animator>();
-        runningTrailSmall = transform.Find("Running Trail_02").GetComponent<ParticleSystem>();
-        runningTrailLarge = transform.Find("Running Trail_01").GetComponent<ParticleSystem>();
-        smallEmission = runningTrailSmall.emission;
-        largeEmission = runningTrailLarge.emission;
+        deathParticle = transform.Find("Death Particles").gameObject;
+       // runningTrailSmall = transform.Find("Running Trail_02").GetComponent<ParticleSystem>();
+        //runningTrailLarge = transform.Find("Running Trail_01").GetComponent<ParticleSystem>();
+        smallEmission = transform.Find("Running Trail_02").GetComponent<ParticleSystem>().emission;
+        largeEmission = transform.Find("Running Trail_01").GetComponent<ParticleSystem>().emission;
         rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
@@ -108,6 +112,14 @@ public class BaseCharacter : MonoBehaviour {
         }
     }
 
+    public void PickUpModifier(GameObject mod) {
+        activeModifier.Add(mod);
+    }
+
+    public void RemoveModifier(GameObject mod) {
+        activeModifier.Remove(mod);
+    }
+
     protected void StartRespawn() {
         if (respawnTimer.Run(respawnDelay)) {
             Respawn();
@@ -116,18 +128,22 @@ public class BaseCharacter : MonoBehaviour {
 
     public void Respawn() {
         if (gameManager.State == GameState.Play) {
-            // Reset();
-            // transform.position = gameManager.currentMap.GetSpawnPosition(type);
-            gameManager.SpawnPlayer(player, type, gameManager.currentMap.GetSpawnPosition(type));
+            GameObject obj = gameManager.SpawnCharacter(player, type, gameManager.currentMap.GetSpawnPosition(type));
+           // foreach (GameObject mod in activeModifier){
+           //     GameObject modObj = Instantiate(mod);
+           //     modObj.GetComponent<Modifier>().PickUp(this);
+          //  }
             Destroy(this.gameObject);
         }
     }
 
     virtual public void Die(string killerTag) {
+        deathParticle.SetActive(true);
         model.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
         rigidbody.velocity = Vector3.zero;
         State = CharacterState.Dead;
+        gameManager.RemoveCharacter(this);
     }
 
     public Color BaseColor {

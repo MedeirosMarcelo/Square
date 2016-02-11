@@ -13,7 +13,7 @@ public class Magnetizer : Modifier {
         base.Start();
     }
 
-    void Update() {
+    void FixedUpdate() {
         if (Active) {
             foreach (Bomber bomber in gameManager.bomberList) {
                 if (InsideAreaOfEffect(bomber)) {

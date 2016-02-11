@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipment: {fileID: 112484, guid: 0d257a077e4493b49a6ae3953d9b961a, type: 2}
+  equipment: {fileID: 112484, guid: f350ee28da935ea4cbcf03aa674f6af0, type: 2}
 --- !u!135 &13574174
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -168,7 +168,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: equipment
       value: 
-      objectReference: {fileID: 112484, guid: 0d257a077e4493b49a6ae3953d9b961a, type: 2}
+      objectReference: {fileID: 112484, guid: f350ee28da935ea4cbcf03aa674f6af0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130240}
