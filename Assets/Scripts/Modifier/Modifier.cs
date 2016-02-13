@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Modifier : MonoBehaviour {
 
+    public float duration = 5f;
     public bool Active { get; set; }
     public BaseCharacter Owner { get; set; }
     public ModifierPickUp pickUpObject;
@@ -21,10 +22,11 @@ public class Modifier : MonoBehaviour {
         transform.SetParent(owner.transform);
         transform.localPosition = new Vector3(0f, 0.64f, 0f);
         Active = true;
-        Owner.PickUpModifier(this.gameObject);
+        Owner.modifierObj.Add(this.gameObject);
     }
 
-    void Remove() {
-        Owner.RemoveModifier(this.gameObject);
+    public void Remove() {
+        Owner.modifierObj.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
 }

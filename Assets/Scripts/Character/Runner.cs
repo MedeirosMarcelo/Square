@@ -30,7 +30,7 @@ public class Runner : BaseCharacter {
                 CanPickFlag = true;
                 break;
             case CharacterState.Dead:
-                StartRespawn();
+                WaitRespawn();
                 break;
         }
     }
@@ -83,9 +83,10 @@ public class Runner : BaseCharacter {
     }
 
     public override void Die(string killerTag) {
-        DropFlag();
-        EnterState(CharacterState.Dead);
-       // gameManager.StartNextRound();
-        base.Die(killerTag);
+        if (State != CharacterState.Dead) {
+            DropFlag();
+            EnterState(CharacterState.Dead);
+            base.Die(killerTag);
+        }
     }
 }

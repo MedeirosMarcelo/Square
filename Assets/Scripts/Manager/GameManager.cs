@@ -36,11 +36,6 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        string b = "";
-        foreach (Bomber bomber in bomberList) {
-            b += bomber.name + " ";
-        }
-        Debug.Log(b);
         StateMachine();
     }
 

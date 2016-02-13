@@ -37,7 +37,7 @@ public class Bomber : BaseCharacter {
                 }
                 break;
             case CharacterState.Dead:
-                StartRespawn();
+                WaitRespawn();
                 break;
         }
     }
@@ -70,11 +70,13 @@ public class Bomber : BaseCharacter {
     }
 
     public override void Die(string killerTag) {
-        if (killerTag == "Explosion" || killerTag == "Bomber") {
-            explosion.Explode();
+        if (State != CharacterState.Dead) {
+            if (killerTag == "Explosion" || killerTag == "Bomber") {
+                explosion.Explode();
+            }
+            EnterState(CharacterState.Dead);
+            base.Die(killerTag);
         }
-        EnterState(CharacterState.Dead);
-        base.Die(killerTag);
     }
 
     void ReturnFlag(Flag flag) {

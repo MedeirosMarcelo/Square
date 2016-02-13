@@ -27,7 +27,7 @@ public class BaseCharacter : MonoBehaviour {
     public Vector3 publicVelocity;
     public CharacterState State { get; protected set; }
     public ControllerId id;
-    public IList<GameObject> activeModifier = new List<GameObject>();
+    public IList<GameObject> modifierObj = new List<GameObject>();
 
     protected float respawnDelay;
     protected GameManager gameManager;
@@ -35,10 +35,9 @@ public class BaseCharacter : MonoBehaviour {
     [SerializeField]
     Color baseColor = Color.white;
 
+    IList<GameObject> activeModifiers = new List<GameObject>();
     Timer respawnTimer = new Timer();
     Animator animator;
-    //ParticleSystem runningTrailSmall;
-    //ParticleSystem runningTrailLarge;
     ParticleSystem.EmissionModule smallEmission;
     ParticleSystem.EmissionModule largeEmission;
     GameObject deathParticle;
@@ -49,8 +48,6 @@ public class BaseCharacter : MonoBehaviour {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         animator = transform.Find("Model").GetComponent<Animator>();
         deathParticle = transform.Find("Death Particles").gameObject;
-       // runningTrailSmall = transform.Find("Running Trail_02").GetComponent<ParticleSystem>();
-        //runningTrailLarge = transform.Find("Running Trail_01").GetComponent<ParticleSystem>();
         smallEmission = transform.Find("Running Trail_02").GetComponent<ParticleSystem>().emission;
         largeEmission = transform.Find("Running Trail_01").GetComponent<ParticleSystem>().emission;
         rigidbody = GetComponent<Rigidbody>();
@@ -112,15 +109,15 @@ public class BaseCharacter : MonoBehaviour {
         }
     }
 
-    public void PickUpModifier(GameObject mod) {
-        activeModifier.Add(mod);
+    public void HideModifiers(bool hidden) {
+        foreach (GameObject mod in modifierObj) {
+            Debug.Log(mod.name + modifierObj.Count);
+            mod.SetActive(hidden);
+        }
+        Debug.Log("HideModifiers");
     }
 
-    public void RemoveModifier(GameObject mod) {
-        activeModifier.Remove(mod);
-    }
-
-    protected void StartRespawn() {
+    protected void WaitRespawn() {
         if (respawnTimer.Run(respawnDelay)) {
             Respawn();
         }
@@ -129,20 +126,20 @@ public class BaseCharacter : MonoBehaviour {
     public void Respawn() {
         if (gameManager.State == GameState.Play) {
             GameObject obj = gameManager.SpawnCharacter(player, type, gameManager.currentMap.GetSpawnPosition(type));
-           // foreach (GameObject mod in activeModifier){
-           //     GameObject modObj = Instantiate(mod);
-           //     modObj.GetComponent<Modifier>().PickUp(this);
-          //  }
+            foreach (GameObject mod in modifierObj) {
+                GameObject modObj = Instantiate(mod.gameObject);
+                modObj.GetComponent<Modifier>().PickUp(this);
+            }
             Destroy(this.gameObject);
         }
     }
 
     virtual public void Die(string killerTag) {
+        //HideModifiers(true);
         deathParticle.SetActive(true);
         model.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
         rigidbody.velocity = Vector3.zero;
-        State = CharacterState.Dead;
         gameManager.RemoveCharacter(this);
     }
 
@@ -157,6 +154,7 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     void ShowRunningTrail() {
+
         if (input.horizontal != 0 || input.vertical != 0) {
             smallEmission.enabled = true;
             largeEmission.enabled = true;

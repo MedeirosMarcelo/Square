@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Shrinker : Modifier {
-
-    public float duration = 5f;
+  
     public float scale = 0.5f;
     public float speedBonus = 10f;
     float oldSpeed;
@@ -27,11 +26,11 @@ public class Shrinker : Modifier {
             activated = true;
         }
         else {
-            Reset();
+            EndEffect();
         }
     }
 
-    void Reset() {
+    void EndEffect() {
         if (time.Run(duration)) {
             Owner.transform.localScale = new Vector3(1f, 1f, 1f);
             Owner.maxSpeed = oldSpeed;
