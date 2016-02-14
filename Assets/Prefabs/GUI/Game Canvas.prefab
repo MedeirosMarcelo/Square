@@ -148,8 +148,9 @@ GameObject:
   - 224: {fileID: 22473742}
   - 222: {fileID: 22221638}
   - 114: {fileID: 11461364}
+  - 114: {fileID: 11487832}
   m_Layer: 5
-  m_Name: Modifier Icon
+  m_Name: Modifier Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,8 +200,9 @@ GameObject:
   - 224: {fileID: 22462084}
   - 222: {fileID: 22297884}
   - 114: {fileID: 11449366}
+  - 114: {fileID: 11416698}
   m_Layer: 5
-  m_Name: Modifier Icon
+  m_Name: Modifier Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,8 +307,9 @@ GameObject:
   - 224: {fileID: 22453946}
   - 222: {fileID: 22253456}
   - 114: {fileID: 11454102}
+  - 114: {fileID: 11413086}
   m_Layer: 5
-  m_Name: Modifier Icon
+  m_Name: Modifier Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,10 +389,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  margin: 1.2
+  inputVertical: 1
+  inputHorizontal: 1
   selection:
-  - {fileID: 22462084}
-  - {fileID: 22453946}
-  - {fileID: 22473742}
+  - {fileID: 11416698}
+  - {fileID: 11413086}
+  - {fileID: 11487832}
 --- !u!114 &11408386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,11 +450,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 190
+    m_FontSize: 155
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 217
+    m_MinSize: 1
+    m_MaxSize: 236
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -456,6 +462,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &11413086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7efbb5e5641c6e4ab75ecb216028773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  selected: 0
+  modifierChoice: {fileID: 0}
 --- !u!114 &11413324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,6 +554,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: GET READY!
+--- !u!114 &11416698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7efbb5e5641c6e4ab75ecb216028773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  selected: 0
+  modifierChoice: {fileID: 0}
 --- !u!114 &11428348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -853,10 +887,10 @@ MonoBehaviour:
   - {fileID: 11414640, guid: f350ee28da935ea4cbcf03aa674f6af0, type: 2}
   - {fileID: 11477594, guid: a8eeade3a6504ff409735055ebd05f33, type: 2}
   - {fileID: 11472386, guid: 0d257a077e4493b49a6ae3953d9b961a, type: 2}
-  modSlot:
-  - {fileID: 11449366}
-  - {fileID: 11454102}
-  - {fileID: 11461364}
+  modButton:
+  - {fileID: 11416698}
+  - {fileID: 11413086}
+  - {fileID: 11487832}
   timer: {fileID: 11411010}
 --- !u!114 &11477154
 MonoBehaviour:
@@ -936,6 +970,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11487832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7efbb5e5641c6e4ab75ecb216028773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+  selected: 0
+  modifierChoice: {fileID: 0}
 --- !u!114 &11490468
 MonoBehaviour:
   m_ObjectHideFlags: 1

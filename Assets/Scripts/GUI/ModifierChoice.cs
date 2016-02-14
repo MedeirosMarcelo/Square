@@ -7,7 +7,7 @@ public class ModifierChoice : MonoBehaviour {
 
     public float maxTime = 5f;
     public Modifier[] modifier = new Modifier[3];
-    public Image[] modSlot;
+    public ModifierButton[] modButton;
     public Text timer;
     Timer time = new Timer();
 
@@ -21,21 +21,19 @@ public class ModifierChoice : MonoBehaviour {
 	}
 
 	void Update () {
-        SelectModifier();
         CheckEndChoice();
 	}
 
     void LoadModifierList() {
-        for (int i = 0; i < modSlot.Length; i++) {
+        for (int i = 0; i < modButton.Length; i++) {
             int rnd = Random.Range(0, 3);
-            modSlot[i].sprite = modifier[rnd].icon;
+            modButton[i].Modifier = modifier[rnd];
         }
     }
 
-    void SelectModifier() {
-        if (Input.GetButtonDown("ExplodeC1")) {
-            EndChoice();
-        }
+    public void SelectModifier(Modifier modifier) {
+        modsChosen.Add(modifier);
+        EndChoice();
     }
 
     void CheckEndChoice() {
@@ -49,8 +47,6 @@ public class ModifierChoice : MonoBehaviour {
 
     void EndChoice() {
         this.gameObject.SetActive(false);
-        modsChosen.Add(modifier[0]); //TODO - Remover após criar controle de escolha dos mods.
-        modsChosen.Add(modifier[1]);
         gameManager.BuildChosenMods(modsChosen);
     }
 }
