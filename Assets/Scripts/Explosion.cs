@@ -15,7 +15,7 @@ public class Explosion : MonoBehaviour {
 
     void Start() {
         animator = GetComponent<Animator>();
-        
+        bomber = transform.parent.GetComponent<Bomber>();
     }
 
     void Update() {
@@ -23,9 +23,8 @@ public class Explosion : MonoBehaviour {
         mat.SetFloat("_SliceAmount", matValue);
     }
 
-    public void TriggerBomb(Bomber bomber) {
+    public void TriggerBomb() {
         triggered = true;
-        this.bomber = bomber;
         StartCoroutine("Trigger", bombDelay);
     }
 
@@ -35,9 +34,15 @@ public class Explosion : MonoBehaviour {
     }
 
     public void Explode() {
-        transform.SetParent(null);
-        animator.SetBool("Explode", true);
-        Destroy(this.gameObject, duration);
+        if (bomber.State == CharacterState.Alive) {
+            transform.SetParent(null);
+            animator.SetBool("Explode", true);
+            //Destroy(this.gameObject, duration);
+        }
+    }
+
+    public void Destroy() {
+        Destroy(this.gameObject);
     }
 
     float t = 0;

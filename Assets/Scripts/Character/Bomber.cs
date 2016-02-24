@@ -65,7 +65,7 @@ public class Bomber : BaseCharacter {
 
     void ControlInput() {
         if (input.explode) {
-            explosion.TriggerBomb(this);
+            explosion.TriggerBomb();
         }
     }
 

@@ -40,6 +40,8 @@ public class BaseCharacter : MonoBehaviour {
     Animator animator;
     ParticleSystem.EmissionModule smallEmission;
     ParticleSystem.EmissionModule largeEmission;
+    GameObject trail;
+    GameObject trail2;
     GameObject deathParticle;
     GameObject model;
     Vector3 velocity;
@@ -50,6 +52,8 @@ public class BaseCharacter : MonoBehaviour {
         deathParticle = transform.Find("Death Particles").gameObject;
         smallEmission = transform.Find("Running Trail_02").GetComponent<ParticleSystem>().emission;
         largeEmission = transform.Find("Running Trail_01").GetComponent<ParticleSystem>().emission;
+        trail2 = transform.Find("Running Trail_01").gameObject;
+        trail = transform.Find("Running Trail_01").gameObject;
         rigidbody = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
         Reset();
@@ -102,10 +106,14 @@ public class BaseCharacter : MonoBehaviour {
             return;
         }
         if (Mathf.Abs(input.horizontal) >= Mathf.Abs(input.vertical)) {
-            transform.forward = new Vector3(input.horizontal, 0f, 0f);
+         //   transform.forward = new Vector3(input.horizontal, 0f, 0f);
+            trail2.transform.forward = new Vector3(input.horizontal, 0f, 0f);
+            trail.transform.forward = new Vector3(input.horizontal, 0f, 0f);
         }
         else {
-            transform.forward = new Vector3(0f, 0f, input.vertical);
+        //    transform.forward = new Vector3(0f, 0f, input.vertical);
+            trail2.transform.forward = new Vector3(0f, 0f, input.vertical);
+            trail.transform.forward = new Vector3(0f, 0f, input.vertical);
         }
     }
 
@@ -126,10 +134,10 @@ public class BaseCharacter : MonoBehaviour {
     public void Respawn() {
         if (gameManager.State == GameState.Play) {
             GameObject obj = gameManager.SpawnCharacter(player, type, gameManager.currentMap.GetSpawnPosition(type));
-            foreach (GameObject mod in modifierObj) {
-                GameObject modObj = Instantiate(mod.gameObject);
-                modObj.GetComponent<Modifier>().PickUp(this);
-            }
+            //   foreach (GameObject mod in modifierObj) {
+            //      GameObject modObj = Instantiate(mod.gameObject);
+            //       modObj.GetComponent<Modifier>().PickUp(this);
+            //   }
             Destroy(this.gameObject);
         }
     }
@@ -154,17 +162,16 @@ public class BaseCharacter : MonoBehaviour {
     }
 
     void ShowRunningTrail() {
-
-        if (input.horizontal != 0 || input.vertical != 0) {
-            smallEmission.enabled = true;
-            largeEmission.enabled = true;
-           // animator.SetBool("Running", true);
+        if ((State == CharacterState.Alive) && (input.horizontal != 0 || input.vertical != 0)) {
+                smallEmission.enabled = true;
+                largeEmission.enabled = true;
+                // animator.SetBool("Running", true);
         }
         else {
             if (smallEmission.enabled != false) {
                 smallEmission.enabled = false;
                 largeEmission.enabled = false;
-            //    animator.SetBool("Running", false);
+                //    animator.SetBool("Running", false);
             }
         }
     }

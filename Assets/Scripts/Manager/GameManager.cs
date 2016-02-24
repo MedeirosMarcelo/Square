@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour {
     public List<BaseCharacter> GetCharacters()
     {
         List<BaseCharacter> list = new List<BaseCharacter>();
-        list.Add(runner);
+        if (runner != null) list.Add(runner);
         foreach (Bomber bomber in bomberList)
         {
             list.Add((BaseCharacter)bomber);

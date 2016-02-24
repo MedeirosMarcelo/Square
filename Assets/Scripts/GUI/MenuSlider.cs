@@ -8,10 +8,10 @@ public class MenuSlider : MenuSelectable {
 
 	void Update () {
         if (selected) {
-            if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (Input.GetKey(KeyCode.RightArrow)) {
                 slider.value += 0.05f;
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            else if (Input.GetKey(KeyCode.LeftArrow)) {
                 slider.value -= 0.05f;
             }
         }

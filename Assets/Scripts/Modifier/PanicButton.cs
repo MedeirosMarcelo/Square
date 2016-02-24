@@ -27,7 +27,7 @@ public class PanicButton : Modifier {
 
     void ExplodeAll() {
         foreach (Bomber bomber in gameManager.bomberList) {
-            bomber.explosion.TriggerBomb(bomber);
+            bomber.explosion.TriggerBomb();
         }
     }
 }
