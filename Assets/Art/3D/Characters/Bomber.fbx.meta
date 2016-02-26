@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: b49d2b4826e4312429c88f369173628e
-timeCreated: 1454687916
+guid: c2e9fa696a6a9ac43a1af54ae77930e9
+timeCreated: 1456456736
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Bomber
-    100002: //RootNode
+    100000: //RootNode
+    100002: Bomber
     100004: BomberArmature
     100006: BoneBase
     100008: BoneFoot
     100010: BoneHat
     100012: BoneHat_end
     100014: BoneHead
-    400000: Bomber
-    400002: //RootNode
+    400000: //RootNode
+    400002: Bomber
     400004: BomberArmature
     400006: BoneBase
     400008: BoneFoot
@@ -22,8 +22,11 @@ ModelImporter:
     400012: BoneHat_end
     400014: BoneHead
     4300000: Bomber
-    7400000: Bomber_Idle
-    7400002: Bomber_Running
+    7400000: BomberIdle
+    7400002: BomberRunningDown
+    7400004: BomberRunningRight
+    7400006: BomberRunningUp
+    7400008: BomberRunningLeft
     9500000: //RootNode
     13700000: Bomber
   materials:
@@ -48,7 +51,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bomber_Idle
+      name: BomberIdle
       takeName: BomberArmature|ArmatureAction
       firstFrame: 0
       lastFrame: 0
@@ -58,7 +61,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -92,10 +95,142 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Bomber_Running
+      name: BomberRunningDown
       takeName: BomberArmature|ArmatureAction
-      firstFrame: 3
+      firstFrame: 0
       lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bomber
+        weight: 1
+      - path: BomberArmature
+        weight: 1
+      - path: BomberArmature/BoneBase
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BomberRunningRight
+      takeName: BomberArmature|ArmatureAction
+      firstFrame: 10
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bomber
+        weight: 1
+      - path: BomberArmature
+        weight: 1
+      - path: BomberArmature/BoneBase
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BomberRunningUp
+      takeName: BomberArmature|ArmatureAction
+      firstFrame: 20
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bomber
+        weight: 1
+      - path: BomberArmature
+        weight: 1
+      - path: BomberArmature/BoneBase
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat
+        weight: 1
+      - path: BomberArmature/BoneBase/BoneFoot/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BomberRunningLeft
+      takeName: BomberArmature|ArmatureAction
+      firstFrame: 30
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

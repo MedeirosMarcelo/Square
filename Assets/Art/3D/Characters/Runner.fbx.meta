@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: caf4900cdb9484e4d98845dd7a169d43
-timeCreated: 1454688306
+guid: 198216b9fbf0cbc449cc1c06dd9beed9
+timeCreated: 1456456957
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -12,8 +12,8 @@ ModelImporter:
     100008: BoneHat_end
     100010: BoneHead
     100012: BoneSpine
-    100014: Runner
-    100016: //RootNode
+    100014: //RootNode
+    100016: Runner
     100018: RunnerArmature
     400000: BaseBone
     400002: BaseBone_end
@@ -22,12 +22,15 @@ ModelImporter:
     400008: BoneHat_end
     400010: BoneHead
     400012: BoneSpine
-    400014: Runner
-    400016: //RootNode
+    400014: //RootNode
+    400016: Runner
     400018: RunnerArmature
     4300000: Runner
-    7400000: Runner_Idle
-    7400002: Runner_Runing
+    7400000: RunnerIdle
+    7400002: RunnerRunningDown
+    7400004: RunnerRunningRight
+    7400006: RunnerRunningUp
+    7400008: RunnerRunningLeft
     9500000: //RootNode
     13700000: Runner
   materials:
@@ -52,7 +55,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Runner_Idle
+      name: RunnerIdle
       takeName: RunnerArmature|ArmatureAction
       firstFrame: 0
       lastFrame: 0
@@ -100,10 +103,154 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Runner_Runing
+      name: RunnerRunningDown
       takeName: RunnerArmature|ArmatureAction
-      firstFrame: 3
+      firstFrame: 0
       lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Runner
+        weight: 1
+      - path: RunnerArmature
+        weight: 1
+      - path: RunnerArmature/BaseBone
+        weight: 1
+      - path: RunnerArmature/BaseBone/BaseBone_end
+        weight: 1
+      - path: RunnerArmature/BoneFoot
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunnerRunningRight
+      takeName: RunnerArmature|ArmatureAction
+      firstFrame: 10
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Runner
+        weight: 1
+      - path: RunnerArmature
+        weight: 1
+      - path: RunnerArmature/BaseBone
+        weight: 1
+      - path: RunnerArmature/BaseBone/BaseBone_end
+        weight: 1
+      - path: RunnerArmature/BoneFoot
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunnerRunningUp
+      takeName: RunnerArmature|ArmatureAction
+      firstFrame: 20
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Runner
+        weight: 1
+      - path: RunnerArmature
+        weight: 1
+      - path: RunnerArmature/BaseBone
+        weight: 1
+      - path: RunnerArmature/BaseBone/BaseBone_end
+        weight: 1
+      - path: RunnerArmature/BoneFoot
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat
+        weight: 1
+      - path: RunnerArmature/BoneFoot/BoneSpine/BoneHead/BoneHat/BoneHat_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunnerRunningLeft
+      takeName: RunnerArmature|ArmatureAction
+      firstFrame: 30
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
