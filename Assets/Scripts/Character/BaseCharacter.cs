@@ -97,7 +97,18 @@ public class BaseCharacter : MonoBehaviour {
 
         rigidbody.MovePosition(newPosition);
         Forward();
-        if (type == CharacterType.Runner) animator.SetFloat("Velocity", (input.horizontal + input.vertical) / 2f);
+        //if (type == CharacterType.Runner) animator.SetFloat("Velocity", (input.horizontal + input.vertical) / 2f);
+        if (type == CharacterType.Runner) {
+            if (Mathf.Abs(input.horizontal) >= Mathf.Abs(input.vertical)) {
+                animator.SetFloat("VelocityX", input.horizontal);
+                animator.SetFloat("VelocityY", 0);
+            }
+            else {
+                animator.SetFloat("VelocityX", 0);
+                animator.SetFloat("VelocityY", input.vertical);
+            }
+            
+        }
     }
 
     protected void Forward() {
