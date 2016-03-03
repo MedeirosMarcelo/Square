@@ -1,0 +1,1497 @@
+fileFormatVersion: 2
+guid: 951246553f15db749b1a79cbc876b185
+timeCreated: 1456963355
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LoadingAnimationSheet_0
+    21300002: LoadingAnimationSheet_1
+    21300004: LoadingAnimationSheet_2
+    21300006: LoadingAnimationSheet_3
+    21300008: LoadingAnimationSheet_4
+    21300010: LoadingAnimationSheet_5
+    21300012: LoadingAnimationSheet_6
+    21300014: LoadingAnimationSheet_7
+    21300016: LoadingAnimationSheet_8
+    21300018: LoadingAnimationSheet_9
+    21300020: LoadingAnimationSheet_10
+    21300022: LoadingAnimationSheet_11
+    21300024: LoadingAnimationSheet_12
+    21300026: LoadingAnimationSheet_13
+    21300028: LoadingAnimationSheet_14
+    21300030: LoadingAnimationSheet_15
+    21300032: LoadingAnimationSheet_16
+    21300034: LoadingAnimationSheet_17
+    21300036: LoadingAnimationSheet_18
+    21300038: LoadingAnimationSheet_19
+    21300040: LoadingAnimationSheet_20
+    21300042: LoadingAnimationSheet_21
+    21300044: LoadingAnimationSheet_22
+    21300046: LoadingAnimationSheet_23
+    21300048: LoadingAnimationSheet_24
+    21300050: LoadingAnimationSheet_25
+    21300052: LoadingAnimationSheet_26
+    21300054: LoadingAnimationSheet_27
+    21300056: LoadingAnimationSheet_28
+    21300058: LoadingAnimationSheet_29
+    21300060: LoadingAnimationSheet_30
+    21300062: LoadingAnimationSheet_31
+    21300064: LoadingAnimationSheet_32
+    21300066: LoadingAnimationSheet_33
+    21300068: LoadingAnimationSheet_34
+    21300070: LoadingAnimationSheet_35
+    21300072: LoadingAnimationSheet_36
+    21300074: LoadingAnimationSheet_37
+    21300076: LoadingAnimationSheet_38
+    21300078: LoadingAnimationSheet_39
+    21300080: LoadingAnimationSheet_40
+    21300082: LoadingAnimationSheet_41
+    21300084: LoadingAnimationSheet_42
+    21300086: LoadingAnimationSheet_43
+    21300088: LoadingAnimationSheet_44
+    21300090: LoadingAnimationSheet_45
+    21300092: LoadingAnimationSheet_46
+    21300094: LoadingAnimationSheet_47
+    21300096: LoadingAnimationSheet_48
+    21300098: LoadingAnimationSheet_49
+    21300100: LoadingAnimationSheet_50
+    21300102: LoadingAnimationSheet_51
+    21300104: LoadingAnimationSheet_52
+    21300106: LoadingAnimationSheet_53
+    21300108: LoadingAnimationSheet_54
+    21300110: LoadingAnimationSheet_55
+    21300112: LoadingAnimationSheet_56
+    21300114: LoadingAnimationSheet_57
+    21300116: LoadingAnimationSheet_58
+    21300118: LoadingAnimationSheet_59
+    21300120: LoadingAnimationSheet_60
+    21300122: LoadingAnimationSheet_61
+    21300124: LoadingAnimationSheet_62
+    21300126: LoadingAnimationSheet_63
+    21300128: LoadingAnimationSheet_64
+    21300130: LoadingAnimationSheet_65
+    21300132: LoadingAnimationSheet_66
+    21300134: LoadingAnimationSheet_67
+    21300136: LoadingAnimationSheet_68
+    21300138: LoadingAnimationSheet_69
+    21300140: LoadingAnimationSheet_70
+    21300142: LoadingAnimationSheet_71
+    21300144: LoadingAnimationSheet_72
+    21300146: LoadingAnimationSheet_73
+    21300148: LoadingAnimationSheet_74
+    21300150: LoadingAnimationSheet_75
+    21300152: LoadingAnimationSheet_76
+    21300154: LoadingAnimationSheet_77
+    21300156: LoadingAnimationSheet_78
+    21300158: LoadingAnimationSheet_79
+    21300160: LoadingAnimationSheet_80
+    21300162: LoadingAnimationSheet_81
+    21300164: LoadingAnimationSheet_82
+    21300166: LoadingAnimationSheet_83
+    21300168: LoadingAnimationSheet_84
+    21300170: LoadingAnimationSheet_85
+    21300172: LoadingAnimationSheet_86
+    21300174: LoadingAnimationSheet_87
+    21300176: LoadingAnimationSheet_88
+    21300178: LoadingAnimationSheet_89
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LoadingAnimationSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.600037}
+        - {x: -102.5, y: -57.399963}
+        - {x: 102.5, y: -57.399963}
+        - {x: 102.5, y: 58.600037}
+    - name: LoadingAnimationSheet_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.600037}
+        - {x: -102.2, y: -57.399963}
+        - {x: 103.8, y: -57.399963}
+        - {x: 103.8, y: 58.600037}
+    - name: LoadingAnimationSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.600037}
+        - {x: -102.399994, y: -57.399963}
+        - {x: 103.600006, y: -57.399963}
+        - {x: 103.600006, y: 58.600037}
+    - name: LoadingAnimationSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.600037}
+        - {x: -102.599976, y: -57.399963}
+        - {x: 103.400024, y: -57.399963}
+        - {x: 103.400024, y: 58.600037}
+    - name: LoadingAnimationSheet_4
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.600037}
+        - {x: -102.29999, y: -57.399963}
+        - {x: 102.70001, y: -57.399963}
+        - {x: 102.70001, y: 58.600037}
+    - name: LoadingAnimationSheet_5
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.600037}
+        - {x: -102.5, y: -57.399963}
+        - {x: 102.5, y: -57.399963}
+        - {x: 102.5, y: 58.600037}
+    - name: LoadingAnimationSheet_6
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.600037}
+        - {x: -102.19995, y: -57.399963}
+        - {x: 103.80005, y: -57.399963}
+        - {x: 103.80005, y: 58.600037}
+    - name: LoadingAnimationSheet_7
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.600037}
+        - {x: -102.400024, y: -57.399963}
+        - {x: 103.599976, y: -57.399963}
+        - {x: 103.599976, y: 58.600037}
+    - name: LoadingAnimationSheet_8
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.600037}
+        - {x: -102.599976, y: -57.399963}
+        - {x: 103.400024, y: -57.399963}
+        - {x: 103.400024, y: 58.600037}
+    - name: LoadingAnimationSheet_9
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 4320
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.600037}
+        - {x: -102.29993, y: -57.399963}
+        - {x: 102.70007, y: -57.399963}
+        - {x: 102.70007, y: 58.600037}
+    - name: LoadingAnimationSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.400024}
+        - {x: -102.5, y: -57.599976}
+        - {x: 102.5, y: -57.599976}
+        - {x: 102.5, y: 58.400024}
+    - name: LoadingAnimationSheet_11
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.400024}
+        - {x: -102.2, y: -57.599976}
+        - {x: 103.8, y: -57.599976}
+        - {x: 103.8, y: 58.400024}
+    - name: LoadingAnimationSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.400024}
+        - {x: -102.399994, y: -57.599976}
+        - {x: 103.600006, y: -57.599976}
+        - {x: 103.600006, y: 58.400024}
+    - name: LoadingAnimationSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.400024}
+        - {x: -102.599976, y: -57.599976}
+        - {x: 103.400024, y: -57.599976}
+        - {x: 103.400024, y: 58.400024}
+    - name: LoadingAnimationSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.400024}
+        - {x: -102.29999, y: -57.599976}
+        - {x: 102.70001, y: -57.599976}
+        - {x: 102.70001, y: 58.400024}
+    - name: LoadingAnimationSheet_15
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.400024}
+        - {x: -102.5, y: -57.599976}
+        - {x: 102.5, y: -57.599976}
+        - {x: 102.5, y: 58.400024}
+    - name: LoadingAnimationSheet_16
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.400024}
+        - {x: -102.19995, y: -57.599976}
+        - {x: 103.80005, y: -57.599976}
+        - {x: 103.80005, y: 58.400024}
+    - name: LoadingAnimationSheet_17
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.400024}
+        - {x: -102.400024, y: -57.599976}
+        - {x: 103.599976, y: -57.599976}
+        - {x: 103.599976, y: 58.400024}
+    - name: LoadingAnimationSheet_18
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.400024}
+        - {x: -102.599976, y: -57.599976}
+        - {x: 103.400024, y: -57.599976}
+        - {x: 103.400024, y: 58.400024}
+    - name: LoadingAnimationSheet_19
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 3780
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.400024}
+        - {x: -102.29993, y: -57.599976}
+        - {x: 102.70007, y: -57.599976}
+        - {x: 102.70007, y: 58.400024}
+    - name: LoadingAnimationSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.200012}
+        - {x: -102.5, y: -57.799988}
+        - {x: 102.5, y: -57.799988}
+        - {x: 102.5, y: 58.200012}
+    - name: LoadingAnimationSheet_21
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.200012}
+        - {x: -102.2, y: -57.799988}
+        - {x: 103.8, y: -57.799988}
+        - {x: 103.8, y: 58.200012}
+    - name: LoadingAnimationSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.200012}
+        - {x: -102.399994, y: -57.799988}
+        - {x: 103.600006, y: -57.799988}
+        - {x: 103.600006, y: 58.200012}
+    - name: LoadingAnimationSheet_23
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.200012}
+        - {x: -102.599976, y: -57.799988}
+        - {x: 103.400024, y: -57.799988}
+        - {x: 103.400024, y: 58.200012}
+    - name: LoadingAnimationSheet_24
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.200012}
+        - {x: -102.29999, y: -57.799988}
+        - {x: 102.70001, y: -57.799988}
+        - {x: 102.70001, y: 58.200012}
+    - name: LoadingAnimationSheet_25
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.200012}
+        - {x: -102.5, y: -57.799988}
+        - {x: 102.5, y: -57.799988}
+        - {x: 102.5, y: 58.200012}
+    - name: LoadingAnimationSheet_26
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.200012}
+        - {x: -102.19995, y: -57.799988}
+        - {x: 103.80005, y: -57.799988}
+        - {x: 103.80005, y: 58.200012}
+    - name: LoadingAnimationSheet_27
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.200012}
+        - {x: -102.400024, y: -57.799988}
+        - {x: 103.599976, y: -57.799988}
+        - {x: 103.599976, y: 58.200012}
+    - name: LoadingAnimationSheet_28
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.200012}
+        - {x: -102.599976, y: -57.799988}
+        - {x: 103.400024, y: -57.799988}
+        - {x: 103.400024, y: 58.200012}
+    - name: LoadingAnimationSheet_29
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 3240
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.200012}
+        - {x: -102.29993, y: -57.799988}
+        - {x: 102.70007, y: -57.799988}
+        - {x: 102.70007, y: 58.200012}
+    - name: LoadingAnimationSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58}
+        - {x: -102.5, y: -58}
+        - {x: 102.5, y: -58}
+        - {x: 102.5, y: 58}
+    - name: LoadingAnimationSheet_31
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58}
+        - {x: -102.2, y: -58}
+        - {x: 103.8, y: -58}
+        - {x: 103.8, y: 58}
+    - name: LoadingAnimationSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58}
+        - {x: -102.399994, y: -58}
+        - {x: 103.600006, y: -58}
+        - {x: 103.600006, y: 58}
+    - name: LoadingAnimationSheet_33
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58}
+        - {x: -102.599976, y: -58}
+        - {x: 103.400024, y: -58}
+        - {x: 103.400024, y: 58}
+    - name: LoadingAnimationSheet_34
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58}
+        - {x: -102.29999, y: -58}
+        - {x: 102.70001, y: -58}
+        - {x: 102.70001, y: 58}
+    - name: LoadingAnimationSheet_35
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58}
+        - {x: -102.5, y: -58}
+        - {x: 102.5, y: -58}
+        - {x: 102.5, y: 58}
+    - name: LoadingAnimationSheet_36
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58}
+        - {x: -102.19995, y: -58}
+        - {x: 103.80005, y: -58}
+        - {x: 103.80005, y: 58}
+    - name: LoadingAnimationSheet_37
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58}
+        - {x: -102.400024, y: -58}
+        - {x: 103.599976, y: -58}
+        - {x: 103.599976, y: 58}
+    - name: LoadingAnimationSheet_38
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58}
+        - {x: -102.599976, y: -58}
+        - {x: 103.400024, y: -58}
+        - {x: 103.400024, y: 58}
+    - name: LoadingAnimationSheet_39
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 2700
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58}
+        - {x: -102.29993, y: -58}
+        - {x: 102.70007, y: -58}
+        - {x: 102.70007, y: 58}
+    - name: LoadingAnimationSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.80002}
+        - {x: -102.5, y: -57.19998}
+        - {x: 102.5, y: -57.19998}
+        - {x: 102.5, y: 58.80002}
+    - name: LoadingAnimationSheet_41
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.80002}
+        - {x: -102.2, y: -57.19998}
+        - {x: 103.8, y: -57.19998}
+        - {x: 103.8, y: 58.80002}
+    - name: LoadingAnimationSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.80002}
+        - {x: -102.399994, y: -57.19998}
+        - {x: 103.600006, y: -57.19998}
+        - {x: 103.600006, y: 58.80002}
+    - name: LoadingAnimationSheet_43
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.80002}
+        - {x: -102.599976, y: -57.19998}
+        - {x: 103.400024, y: -57.19998}
+        - {x: 103.400024, y: 58.80002}
+    - name: LoadingAnimationSheet_44
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.80002}
+        - {x: -102.29999, y: -57.19998}
+        - {x: 102.70001, y: -57.19998}
+        - {x: 102.70001, y: 58.80002}
+    - name: LoadingAnimationSheet_45
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.80002}
+        - {x: -102.5, y: -57.19998}
+        - {x: 102.5, y: -57.19998}
+        - {x: 102.5, y: 58.80002}
+    - name: LoadingAnimationSheet_46
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.80002}
+        - {x: -102.19995, y: -57.19998}
+        - {x: 103.80005, y: -57.19998}
+        - {x: 103.80005, y: 58.80002}
+    - name: LoadingAnimationSheet_47
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.80002}
+        - {x: -102.400024, y: -57.19998}
+        - {x: 103.599976, y: -57.19998}
+        - {x: 103.599976, y: 58.80002}
+    - name: LoadingAnimationSheet_48
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.80002}
+        - {x: -102.599976, y: -57.19998}
+        - {x: 103.400024, y: -57.19998}
+        - {x: 103.400024, y: 58.80002}
+    - name: LoadingAnimationSheet_49
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 2160
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.80002}
+        - {x: -102.29993, y: -57.19998}
+        - {x: 102.70007, y: -57.19998}
+        - {x: 102.70007, y: 58.80002}
+    - name: LoadingAnimationSheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.600006}
+        - {x: -102.5, y: -57.399994}
+        - {x: 102.5, y: -57.399994}
+        - {x: 102.5, y: 58.600006}
+    - name: LoadingAnimationSheet_51
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.600006}
+        - {x: -102.2, y: -57.399994}
+        - {x: 103.8, y: -57.399994}
+        - {x: 103.8, y: 58.600006}
+    - name: LoadingAnimationSheet_52
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.600006}
+        - {x: -102.399994, y: -57.399994}
+        - {x: 103.600006, y: -57.399994}
+        - {x: 103.600006, y: 58.600006}
+    - name: LoadingAnimationSheet_53
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.600006}
+        - {x: -102.599976, y: -57.399994}
+        - {x: 103.400024, y: -57.399994}
+        - {x: 103.400024, y: 58.600006}
+    - name: LoadingAnimationSheet_54
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.600006}
+        - {x: -102.29999, y: -57.399994}
+        - {x: 102.70001, y: -57.399994}
+        - {x: 102.70001, y: 58.600006}
+    - name: LoadingAnimationSheet_55
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.600006}
+        - {x: -102.5, y: -57.399994}
+        - {x: 102.5, y: -57.399994}
+        - {x: 102.5, y: 58.600006}
+    - name: LoadingAnimationSheet_56
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.600006}
+        - {x: -102.19995, y: -57.399994}
+        - {x: 103.80005, y: -57.399994}
+        - {x: 103.80005, y: 58.600006}
+    - name: LoadingAnimationSheet_57
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.600006}
+        - {x: -102.400024, y: -57.399994}
+        - {x: 103.599976, y: -57.399994}
+        - {x: 103.599976, y: 58.600006}
+    - name: LoadingAnimationSheet_58
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.600006}
+        - {x: -102.599976, y: -57.399994}
+        - {x: 103.400024, y: -57.399994}
+        - {x: 103.400024, y: 58.600006}
+    - name: LoadingAnimationSheet_59
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 1620
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.600006}
+        - {x: -102.29993, y: -57.399994}
+        - {x: 102.70007, y: -57.399994}
+        - {x: 102.70007, y: 58.600006}
+    - name: LoadingAnimationSheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.40001}
+        - {x: -102.5, y: -57.59999}
+        - {x: 102.5, y: -57.59999}
+        - {x: 102.5, y: 58.40001}
+    - name: LoadingAnimationSheet_61
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.40001}
+        - {x: -102.2, y: -57.59999}
+        - {x: 103.8, y: -57.59999}
+        - {x: 103.8, y: 58.40001}
+    - name: LoadingAnimationSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.40001}
+        - {x: -102.399994, y: -57.59999}
+        - {x: 103.600006, y: -57.59999}
+        - {x: 103.600006, y: 58.40001}
+    - name: LoadingAnimationSheet_63
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.40001}
+        - {x: -102.599976, y: -57.59999}
+        - {x: 103.400024, y: -57.59999}
+        - {x: 103.400024, y: 58.40001}
+    - name: LoadingAnimationSheet_64
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.40001}
+        - {x: -102.29999, y: -57.59999}
+        - {x: 102.70001, y: -57.59999}
+        - {x: 102.70001, y: 58.40001}
+    - name: LoadingAnimationSheet_65
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.40001}
+        - {x: -102.5, y: -57.59999}
+        - {x: 102.5, y: -57.59999}
+        - {x: 102.5, y: 58.40001}
+    - name: LoadingAnimationSheet_66
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.40001}
+        - {x: -102.19995, y: -57.59999}
+        - {x: 103.80005, y: -57.59999}
+        - {x: 103.80005, y: 58.40001}
+    - name: LoadingAnimationSheet_67
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.40001}
+        - {x: -102.400024, y: -57.59999}
+        - {x: 103.599976, y: -57.59999}
+        - {x: 103.599976, y: 58.40001}
+    - name: LoadingAnimationSheet_68
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.40001}
+        - {x: -102.599976, y: -57.59999}
+        - {x: 103.400024, y: -57.59999}
+        - {x: 103.400024, y: 58.40001}
+    - name: LoadingAnimationSheet_69
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 1080
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.40001}
+        - {x: -102.29993, y: -57.59999}
+        - {x: 102.70007, y: -57.59999}
+        - {x: 102.70007, y: 58.40001}
+    - name: LoadingAnimationSheet_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.200005}
+        - {x: -102.5, y: -57.799995}
+        - {x: 102.5, y: -57.799995}
+        - {x: 102.5, y: 58.200005}
+    - name: LoadingAnimationSheet_71
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58.200005}
+        - {x: -102.2, y: -57.799995}
+        - {x: 103.8, y: -57.799995}
+        - {x: 103.8, y: 58.200005}
+    - name: LoadingAnimationSheet_72
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58.200005}
+        - {x: -102.399994, y: -57.799995}
+        - {x: 103.600006, y: -57.799995}
+        - {x: 103.600006, y: 58.200005}
+    - name: LoadingAnimationSheet_73
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.200005}
+        - {x: -102.599976, y: -57.799995}
+        - {x: 103.400024, y: -57.799995}
+        - {x: 103.400024, y: 58.200005}
+    - name: LoadingAnimationSheet_74
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58.200005}
+        - {x: -102.29999, y: -57.799995}
+        - {x: 102.70001, y: -57.799995}
+        - {x: 102.70001, y: 58.200005}
+    - name: LoadingAnimationSheet_75
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58.200005}
+        - {x: -102.5, y: -57.799995}
+        - {x: 102.5, y: -57.799995}
+        - {x: 102.5, y: 58.200005}
+    - name: LoadingAnimationSheet_76
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58.200005}
+        - {x: -102.19995, y: -57.799995}
+        - {x: 103.80005, y: -57.799995}
+        - {x: 103.80005, y: 58.200005}
+    - name: LoadingAnimationSheet_77
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58.200005}
+        - {x: -102.400024, y: -57.799995}
+        - {x: 103.599976, y: -57.799995}
+        - {x: 103.599976, y: 58.200005}
+    - name: LoadingAnimationSheet_78
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58.200005}
+        - {x: -102.599976, y: -57.799995}
+        - {x: 103.400024, y: -57.799995}
+        - {x: 103.400024, y: 58.200005}
+    - name: LoadingAnimationSheet_79
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 540
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58.200005}
+        - {x: -102.29993, y: -57.799995}
+        - {x: 102.70007, y: -57.799995}
+        - {x: 102.70007, y: 58.200005}
+    - name: LoadingAnimationSheet_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58}
+        - {x: -102.5, y: -58}
+        - {x: 102.5, y: -58}
+        - {x: 102.5, y: 58}
+    - name: LoadingAnimationSheet_81
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.2, y: 58}
+        - {x: -102.2, y: -58}
+        - {x: 103.8, y: -58}
+        - {x: 103.8, y: 58}
+    - name: LoadingAnimationSheet_82
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.399994, y: 58}
+        - {x: -102.399994, y: -58}
+        - {x: 103.600006, y: -58}
+        - {x: 103.600006, y: 58}
+    - name: LoadingAnimationSheet_83
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58}
+        - {x: -102.599976, y: -58}
+        - {x: 103.400024, y: -58}
+        - {x: 103.400024, y: 58}
+    - name: LoadingAnimationSheet_84
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29999, y: 58}
+        - {x: -102.29999, y: -58}
+        - {x: 102.70001, y: -58}
+        - {x: 102.70001, y: 58}
+    - name: LoadingAnimationSheet_85
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.5, y: 58}
+        - {x: -102.5, y: -58}
+        - {x: 102.5, y: -58}
+        - {x: 102.5, y: 58}
+    - name: LoadingAnimationSheet_86
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.19995, y: 58}
+        - {x: -102.19995, y: -58}
+        - {x: 103.80005, y: -58}
+        - {x: 103.80005, y: 58}
+    - name: LoadingAnimationSheet_87
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.400024, y: 58}
+        - {x: -102.400024, y: -58}
+        - {x: 103.599976, y: -58}
+        - {x: 103.599976, y: 58}
+    - name: LoadingAnimationSheet_88
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.599976, y: 58}
+        - {x: -102.599976, y: -58}
+        - {x: 103.400024, y: -58}
+        - {x: 103.400024, y: 58}
+    - name: LoadingAnimationSheet_89
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 0
+        width: 960
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.29993, y: 58}
+        - {x: -102.29993, y: -58}
+        - {x: 102.70007, y: -58}
+        - {x: 102.70007, y: 58}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
