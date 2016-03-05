@@ -4,12 +4,14 @@ using System.Collections;
 public class Runner : BaseCharacter {
 
     public Flag flag;
+    public Material colorMaterial;
     bool CanPickFlag { get; set; }
 
     protected override void Start() {
         base.Start();
         name = "Runner";
         type = CharacterType.Runner;
+        transform.Find("Model").Find("Runner").GetComponent<SkinnedMeshRenderer>().material = player.colorMaterial;
         respawnDelay = gameManager.currentMap.runnerRespawnDelay;
     }
 
