@@ -1,45 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour {
 
-    public int controllerValue = 0;
-    public bool inputVertical = true;
-    public bool inputHorizontal = true;
+    public bool confirmed;
+    public ControllerId controllerId;
+    public SkinnedMeshRenderer runner;
+    public RectTransform colorContent;
+    public Material[] colorMaterial;
+    public float colorRectOffset = 20f;
 
-    GameObject PlayerUI;
     GameObject controllerText;
     GameObject readyText;
     GameObject colorPanel;
-    GameObject[] color;
     GameObject fashionPanel;
-    RectTransform cursor;
-    bool panelActive = true;
-    float[] colorPosition = new float[3];
-    int cursorIndex = 0;
+    Player activatedPlayer;
+    bool panelActive;
+    IList<RectTransform> colorList;
+    int materialIndex = 2;
 
     void Start() {
-        colorPosition[0] = 19f;
-        colorPosition[1] = 0f;
-        colorPosition[2] = -19f;
         controllerText = transform.Find("Controller").gameObject;
         readyText = transform.Find("Ready").gameObject;
         colorPanel = transform.Find("Color Panel").gameObject;
         fashionPanel = transform.Find("Fashion Panel").gameObject;
-        cursor = transform.Find("Color Panel").transform.Find("Cursor").GetComponent<RectTransform>();
+        colorList = new List<RectTransform>(colorContent.GetComponentsInChildren<RectTransform>());
+        colorList.RemoveAt(0);
+        colorList[2].sizeDelta = new Vector2(27.5f, 19.5f);
     }
 
     void Update() {
-        if (Input.GetButtonDown("ExplodeC" + (controllerValue + 1))) {
+        if (Input.GetButtonDown("ExplodeC" + ((int)controllerId)) || Input.GetKeyDown(KeyCode.Return)) {
             if (panelActive) {
-                DeactivatePanel();
+                ConfirmSelection();
             }
             else {
+                AddPlayer();
                 ActivatePanel();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Backspace)) {
+            DeactivatePanel();
+            RemovePlayer();
+        }
+
         ControlSelection();
+        MoveAndDeform();
+    }
+
+    void AddPlayer() {
+        activatedPlayer = PlayerManager.AddPlayer(controllerId, "P1");
+    }
+
+    void RemovePlayer() {
+        PlayerManager.RemovePlayer(activatedPlayer);
     }
 
     void ActivatePanel() {
@@ -47,6 +63,7 @@ public class CharacterSelection : MonoBehaviour {
         readyText.SetActive(true);
         colorPanel.SetActive(true);
         fashionPanel.SetActive(true);
+        runner.gameObject.SetActive(true);
         panelActive = true;
     }
 
@@ -55,39 +72,101 @@ public class CharacterSelection : MonoBehaviour {
         readyText.SetActive(false);
         colorPanel.SetActive(false);
         fashionPanel.SetActive(false);
+        runner.gameObject.SetActive(false);
         panelActive = false;
+    }
+
+    float colorSpeed = 2f;
+    public Vector2 GetNewPosition(bool moveUp, int i, RectTransform position) {
+        Vector2 offsetY;
+        if (moveUp)
+            offsetY = new Vector2(0, colorRectOffset);
+        else
+            offsetY = new Vector2(0, -(colorRectOffset));
+        return offsetY * i;
+    }
+
+    RectTransform teleportedColorRect;
+    void MoveUp() {
+        teleportedColorRect = colorList[0];
+        colorList.RemoveAt(0);
+        colorList.Add(teleportedColorRect);
+        ControlTexturePointer(true);
+    }
+
+    void MoveDown() {
+        teleportedColorRect = colorList[colorList.Count - 1];
+        colorList.RemoveAt(colorList.Count - 1);
+        colorList.Insert(0, teleportedColorRect);
+        ControlTexturePointer(false);
+    }
+
+    void MoveAndDeform() {
+        if (true) {
+            int i = 0;
+            foreach (RectTransform colorRect in colorList) {
+                if (colorRect == teleportedColorRect) {
+                    Teleport(colorRect, i);
+                }
+                else {
+                    Move(colorRect, i, 0.1f);
+                    if (i == 2)
+                        Deform(colorRect);
+                    else
+                        Straighten(colorRect);
+                }
+                i++;
+            }
+        }
+    }
+
+    void Move(RectTransform rect, int i, float lerpAmount) {
+        rect.anchoredPosition = Vector2.Lerp(rect.anchoredPosition, GetNewPosition(false, i, rect), lerpAmount * colorSpeed);
+    }
+
+    void Teleport(RectTransform rect, int i) {
+        Move(rect, i, 1f);
+    }
+
+    void Deform(RectTransform rect) {
+        rect.sizeDelta = Vector2.Lerp(rect.sizeDelta, new Vector2(27.5f, 19.5f), 0.1f * colorSpeed);
+    }
+    void Straighten(RectTransform rect) {
+        rect.sizeDelta = Vector2.Lerp(rect.sizeDelta, new Vector2(13f, 13f), 0.1f * colorSpeed);
+    }
+
+    void ChangeCharacterColor() {
+        runner.material = colorMaterial[materialIndex];
+    }
+
+    void ConfirmSelection() {
+        activatedPlayer.colorMaterial = colorMaterial[materialIndex];
+        //activatedPlayer.Hat = selectedHat; -- When there are hats.
+        confirmed = true;
+    }
+
+    void ControlTexturePointer(bool moveUp) {
+        if (moveUp) {
+            materialIndex++;
+            if (materialIndex == colorMaterial.Length)
+                materialIndex = 0;
+        }
+        else {
+            materialIndex--;
+            if (materialIndex == -1)
+                materialIndex = colorMaterial.Length - 1;
+        }
     }
 
     void ControlSelection() {
         if (panelActive) {
-            if (inputVertical) {
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                    if (cursorIndex > 0) {
-                        cursorIndex -= 1;
-                    }
-                    cursor.anchoredPosition = new Vector2(cursor.anchoredPosition.x, colorPosition[cursorIndex]);
-                }
-                else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-                    if (cursorIndex < colorPosition.Length - 1) {
-                        cursorIndex += 1;
-                    }
-                    cursor.anchoredPosition = new Vector2(cursor.anchoredPosition.x, colorPosition[cursorIndex]);
-                }
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                MoveDown();
+                ChangeCharacterColor();
             }
-
-            if (inputHorizontal) {
-                if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-                    if (cursorIndex > 0) {
-                        cursorIndex -= 1;
-                    }
-                    cursor.anchoredPosition = new Vector2(cursor.anchoredPosition.x, colorPosition[cursorIndex]);
-                }
-                else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-                    if (cursorIndex < colorPosition.Length - 1) {
-                        cursorIndex += 1;
-                    }
-                    cursor.anchoredPosition = new Vector2(cursor.anchoredPosition.x, colorPosition[cursorIndex]);
-                }
+            else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                MoveUp();
+                ChangeCharacterColor();
             }
         }
     }

@@ -13,9 +13,10 @@ public static class PlayerManager {
         AddPlayer(ControllerId.One, "1");
     }
 
-    public static void AddPlayer(ControllerId control, string name) {
+    public static Player AddPlayer(ControllerId control, string name) {
         Player pl = new Player(control, name);
         PlayerList.Add(pl);
+        return pl;
     }
 
     public static void RemovePlayer(Player player) {
