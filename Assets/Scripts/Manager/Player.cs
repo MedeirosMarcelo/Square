@@ -13,13 +13,4 @@ public class Player {
         this.Controller = controller;
         this.Name = name;
     }
-
-    //public Material Material{
-    //    get {
-    //        switch (color.ToString()) {
-    //            case "Red":
-    //                return 1;
-    //        }
-    //    }
-    //}
 }

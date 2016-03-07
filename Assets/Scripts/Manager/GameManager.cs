@@ -14,7 +14,7 @@ public enum GameState {
 public class GameManager : MonoBehaviour {
 
     public IList<Bomber> bomberList = new List<Bomber>();
-    public Runner runner;
+    public Runner currentRunner;
     public byte maxScore = 5;
     public float roundClock;
     public Map currentMap;
@@ -66,7 +66,8 @@ public class GameManager : MonoBehaviour {
             case GameState.Intro:
                 break;
             case GameState.ChooseMod:
-                ChooseMod();
+               //ChooseMod();
+                EnterState(GameState.Play);
                 break;
             case GameState.Play:
                 StartRound();
@@ -136,7 +137,7 @@ public class GameManager : MonoBehaviour {
         pl.GetComponent<BaseCharacter>().player = player;
         player.Character = pl.GetComponent<BaseCharacter>();
         if (type == CharacterType.Bomber) bomberList.Add(player.Character.GetComponent<Bomber>());
-        else if (type == CharacterType.Runner) runner = player.Character.GetComponent<Runner>();
+        else if (type == CharacterType.Runner) currentRunner = player.Character.GetComponent<Runner>();
         return pl;
     }
 
@@ -145,7 +146,7 @@ public class GameManager : MonoBehaviour {
             bomberList.Remove((Bomber)character);
         }
         else if (character.type == CharacterType.Runner) {
-            runner = null;
+            currentRunner = null;
         }
     }
 
@@ -178,7 +179,7 @@ public class GameManager : MonoBehaviour {
     public List<BaseCharacter> GetCharacters()
     {
         List<BaseCharacter> list = new List<BaseCharacter>();
-        if (runner != null) list.Add(runner);
+        if (currentRunner != null) list.Add(currentRunner);
         foreach (Bomber bomber in bomberList)
         {
             list.Add((BaseCharacter)bomber);

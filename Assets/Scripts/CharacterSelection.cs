@@ -51,11 +51,13 @@ public class CharacterSelection : MonoBehaviour {
     }
 
     void AddPlayer() {
-        activatedPlayer = PlayerManager.AddPlayer(controllerId, "P1");
+        PlayerManager.RemovePlayer(controllerId);
+        activatedPlayer = PlayerManager.AddPlayer(controllerId, "P" + (int)controllerId);
     }
 
     void RemovePlayer() {
         PlayerManager.RemovePlayer(activatedPlayer);
+        PlayerManager.AddPlayer(controllerId, ((int)controllerId).ToString());
     }
 
     void ActivatePanel() {

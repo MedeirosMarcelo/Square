@@ -11,7 +11,9 @@ public class Runner : BaseCharacter {
         base.Start();
         name = "Runner";
         type = CharacterType.Runner;
-        transform.Find("Model").Find("Runner").GetComponent<SkinnedMeshRenderer>().material = player.colorMaterial;
+        if (player.colorMaterial != null) {
+            transform.Find("Model").Find("Runner").GetComponent<SkinnedMeshRenderer>().material = player.colorMaterial;
+        }
         respawnDelay = gameManager.currentMap.runnerRespawnDelay;
     }
 

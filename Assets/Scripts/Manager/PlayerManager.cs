@@ -23,6 +23,19 @@ public static class PlayerManager {
         PlayerList.Remove(player);
     }
 
+    public static void RemovePlayer(ControllerId controller) {
+        Player removedPlayer = null;
+        foreach (Player pl in PlayerList){
+            if (pl.Controller == controller) {
+                removedPlayer = pl;
+                break;
+            }
+        }
+        if (removedPlayer != null) {
+            PlayerList.Remove(removedPlayer);
+        }
+    }
+
     public static IList<Player> GetPlayerList() {
         return PlayerList;
     }
