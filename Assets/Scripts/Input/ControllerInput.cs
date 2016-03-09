@@ -17,9 +17,13 @@ public enum ControllerMode {
 }
 
 
+
 public class ControllerInput : BaseInput {
     public ControllerId id { get; private set; }
     public static ControllerMode mode = ControllerMode.SmoothThreshold;
+
+    MenuAxis menuHorizontalAxis= new MenuAxis();
+    MenuAxis menuVerticalAxis = new MenuAxis();
 
     public ControllerInput(ControllerId id) {
         this.id = id;
@@ -30,6 +34,12 @@ public class ControllerInput : BaseInput {
         horizontal = Input.GetAxis("HorizontalC" + (int)id);
         vertical = Input.GetAxis("VerticalC" + (int)id);
         explode |= Input.GetButtonDown("ExplodeC" + (int)id);
+
+        menuHorizontal = menuHorizontalAxis.Update(horizontal);
+        menuVertical = menuVerticalAxis.Update(vertical);
+        menuSubmit = Input.GetKeyDown("joystick " + (int)id + " button 0");
+        menuCancel = Input.GetKeyDown("joystick " + (int)id + " button 1");
+
         ProcessInput();
     }
 
@@ -81,3 +91,35 @@ public class ControllerInput : BaseInput {
         }
     }
 }
+
+public class MenuAxis {
+    // Timeout for axis to generate a new imput
+    static readonly float axisTimeOut = 0.5f;
+
+    private float menuThreshold = 0.55f;
+    private float timeout = axisTimeOut;
+
+    public int Update(float raw) {
+
+        if (Mathf.Abs(raw) < menuThreshold) {
+            // If axis was realeased clear the timeout
+            timeout = 0f;
+            return 0;
+        }
+
+        // Check if we are waiting for a timeout
+        if (timeout > 0f) {
+            timeout -= Time.deltaTime;
+            if (timeout > 0f) {
+                return 0;
+            }
+        }
+
+        // Timeout expired we will return value and reload timeout
+        timeout = axisTimeOut;
+        var value = (int)Mathf.Sign(raw);
+        return value;
+    }
+}
+
+

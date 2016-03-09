@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class CharacterSelection : MonoBehaviour {
+public class CharacterPanel : MonoBehaviour {
 
-    public bool confirmed;
+
+    [HideInInspector]
+    public bool isActive = false;
+    [HideInInspector]
+    public bool isReady = false;
+
     public ControllerId controllerId;
     public SkinnedMeshRenderer runner;
     public RectTransform colorContent;
@@ -17,9 +22,11 @@ public class CharacterSelection : MonoBehaviour {
     GameObject colorPanel;
     GameObject fashionPanel;
     Player activatedPlayer;
-    bool panelActive;
+
     IList<RectTransform> colorList;
     int materialIndex = 2;
+
+    ControllerInput input;
 
     void Start() {
         controllerText = transform.Find("Controller").gameObject;
@@ -29,25 +36,41 @@ public class CharacterSelection : MonoBehaviour {
         colorList = new List<RectTransform>(colorContent.GetComponentsInChildren<RectTransform>());
         colorList.RemoveAt(0);
         colorList[2].sizeDelta = new Vector2(27.5f, 19.5f);
+
+        input = new ControllerInput(controllerId);
     }
 
     void Update() {
-        if (Input.GetButtonDown("ExplodeC" + ((int)controllerId)) || Input.GetKeyDown(KeyCode.Return)) {
-            if (panelActive) {
-                ConfirmSelection();
+        input.Update();
+
+        if (input.menuSubmit) {
+            if (isActive) {
+                ReadySelection();
             }
             else {
-                AddPlayer();
                 ActivatePanel();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Backspace)) {
-            DeactivatePanel();
-            RemovePlayer();
+        else if (input.menuCancel) {
+            if (isReady) {
+                UnreadySelection();
+            }
+            else {
+                DeactivatePanel();
+
+            }
         }
 
-        ControlSelection();
-        MoveAndDeform();
+        if (isActive && !isReady) {
+            ControlSelection();
+            MoveAndDeform();
+        }
+
+        /*
+        if (isActive) {
+            Debug.Log("Player " + controllerId + "Confirmed=" + isReady + " Color=" + materialIndex);
+        }
+        */
     }
 
     void AddPlayer() {
@@ -61,22 +84,46 @@ public class CharacterSelection : MonoBehaviour {
     }
 
     void ActivatePanel() {
+        AddPlayer();
+        ChangeCharacterColor();
+
         controllerText.SetActive(false);
         readyText.SetActive(true);
         colorPanel.SetActive(true);
         fashionPanel.SetActive(true);
         runner.gameObject.SetActive(true);
-        panelActive = true;
+        isActive = true;
     }
 
     void DeactivatePanel() {
+        RemovePlayer();
         controllerText.SetActive(true);
         readyText.SetActive(false);
         colorPanel.SetActive(false);
         fashionPanel.SetActive(false);
         runner.gameObject.SetActive(false);
-        panelActive = false;
+        isActive = false;
     }
+
+    void ReadySelection() {
+        activatedPlayer.colorMaterial = colorMaterial[materialIndex];
+        //activatedPlayer.Hat = selectedHat; -- When there are hats.
+
+        readyText.SetActive(false);
+        colorPanel.SetActive(false);
+        fashionPanel.SetActive(false);
+        isReady = true;
+    }
+
+    void UnreadySelection() {
+        readyText.SetActive(true);
+        colorPanel.SetActive(true);
+        fashionPanel.SetActive(true);
+        isReady = false;
+    }
+
+
+
 
     float colorSpeed = 2f;
     public Vector2 GetNewPosition(bool moveUp, int i, RectTransform position) {
@@ -104,21 +151,19 @@ public class CharacterSelection : MonoBehaviour {
     }
 
     void MoveAndDeform() {
-        if (true) {
-            int i = 0;
-            foreach (RectTransform colorRect in colorList) {
-                if (colorRect == teleportedColorRect) {
-                    Teleport(colorRect, i);
-                }
-                else {
-                    Move(colorRect, i, 0.1f);
-                    if (i == 2)
-                        Deform(colorRect);
-                    else
-                        Straighten(colorRect);
-                }
-                i++;
+        int i = 0;
+        foreach (RectTransform colorRect in colorList) {
+            if (colorRect == teleportedColorRect) {
+                Teleport(colorRect, i);
             }
+            else {
+                Move(colorRect, i, 0.1f);
+                if (i == 2)
+                    Deform(colorRect);
+                else
+                    Straighten(colorRect);
+            }
+            i++;
         }
     }
 
@@ -141,12 +186,6 @@ public class CharacterSelection : MonoBehaviour {
         runner.material = colorMaterial[materialIndex];
     }
 
-    void ConfirmSelection() {
-        activatedPlayer.colorMaterial = colorMaterial[materialIndex];
-        //activatedPlayer.Hat = selectedHat; -- When there are hats.
-        confirmed = true;
-    }
-
     void ControlTexturePointer(bool moveUp) {
         if (moveUp) {
             materialIndex++;
@@ -161,12 +200,12 @@ public class CharacterSelection : MonoBehaviour {
     }
 
     void ControlSelection() {
-        if (panelActive) {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+        if (isActive) {
+            if (input.menuVertical == -1) {
                 MoveDown();
                 ChangeCharacterColor();
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            else if (input.menuVertical == 1) {
                 MoveUp();
                 ChangeCharacterColor();
             }

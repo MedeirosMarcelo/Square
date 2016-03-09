@@ -7,6 +7,11 @@ public class BaseInput {
     public virtual float vertical { get; protected set; }
     public virtual bool explode { get; protected set; }
 
+    public virtual int menuHorizontal { get; protected set; }
+    public virtual int menuVertical { get; protected set; }
+    public virtual bool menuSubmit { get; protected set; }
+    public virtual bool menuCancel { get; protected set; }
+ 
     public BaseInput() {
         name = "Generic input";
         horizontal = 0.0f;

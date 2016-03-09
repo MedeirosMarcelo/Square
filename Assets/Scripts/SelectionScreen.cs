@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SelectionScreen : MonoBehaviour {
 
     public float clockLength = 5f;
-    IList<CharacterSelection> playerPanel;
+    IList<CharacterPanel> playerPanel;
     GameObject startCounter;
     [SerializeField] Text clockText;
     float clock;
@@ -15,7 +15,7 @@ public class SelectionScreen : MonoBehaviour {
     bool showClock;
 
     void Start() {
-        playerPanel = new List<CharacterSelection>(GetComponentsInChildren<CharacterSelection>());
+        playerPanel = new List<CharacterPanel>(GetComponentsInChildren<CharacterPanel>());
         startCounter = transform.Find("Start Counter").gameObject;
         timer = new Timer();
     }
@@ -30,12 +30,21 @@ public class SelectionScreen : MonoBehaviour {
     }
 
     void CheckConfirmedSelection() {
-        showClock = false;
-        foreach (CharacterSelection panel in playerPanel) {
-            if (panel.confirmed) {
-                showClock = true;
+
+        int active = 0;
+        int confirmed = 0;
+        foreach (CharacterPanel panel in playerPanel) {
+            if (panel.isActive) {
+                active++;
+            }
+            if (panel.isReady) {
+                confirmed++;
             }
         }
+
+        // Start timer if at least one is active and all confirmed
+        showClock = (active > 0 && active == confirmed);
+
         if (!showClock) {
             HideClock();
         }
@@ -65,6 +74,12 @@ public class SelectionScreen : MonoBehaviour {
     }
 
     void StartGame() {
+
+
+        foreach (var p in PlayerManager.GetPlayerList()) {
+            Debug.Log(p.Name + " color: " + p.colorMaterial);
+        }
+
         SceneManager.LoadScene("Prototype v1.0");
     }
 }
