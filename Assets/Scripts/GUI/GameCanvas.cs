@@ -18,7 +18,7 @@ public class GameCanvas : MonoBehaviour {
 	}
 
     void ShowClock(){
-        clockText.text = gameManager.roundClock.ToString();
+        clockText.text = gameManager.roundClock.ToString("n1");
     }
 
     public void ShowModifierChoice(bool show){

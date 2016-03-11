@@ -15,6 +15,7 @@ public class CharacterPanel : MonoBehaviour {
     public SkinnedMeshRenderer runner;
     public RectTransform colorContent;
     public Material[] colorMaterial;
+    public Sprite[] colorSprite;
     public float colorRectOffset = 20f;
 
     GameObject controllerText;
@@ -107,6 +108,7 @@ public class CharacterPanel : MonoBehaviour {
 
     void ReadySelection() {
         activatedPlayer.colorMaterial = colorMaterial[materialIndex];
+        activatedPlayer.colorSprite = colorSprite[materialIndex];
         //activatedPlayer.Hat = selectedHat; -- When there are hats.
 
         readyText.SetActive(false);
@@ -121,9 +123,6 @@ public class CharacterPanel : MonoBehaviour {
         fashionPanel.SetActive(true);
         isReady = false;
     }
-
-
-
 
     float colorSpeed = 2f;
     public Vector2 GetNewPosition(bool moveUp, int i, RectTransform position) {

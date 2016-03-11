@@ -11,9 +11,10 @@ public class GUIScore : MonoBehaviour {
     void Start() {
         gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         scoreValue = GetComponent<Text>();
+        transform.parent.GetComponent<Image>().sprite = PlayerManager.GetPlayer(controller).colorSprite;
     }
 
     void Update() {
-        scoreValue.text = MatchData.PlayerScore[controller].ToString();
+        scoreValue.text = "x" + MatchData.PlayerScore[controller].ToString();
     }
 }

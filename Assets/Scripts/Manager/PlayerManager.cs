@@ -39,4 +39,13 @@ public static class PlayerManager {
     public static IList<Player> GetPlayerList() {
         return PlayerList;
     }
+
+    public static Player GetPlayer(ControllerId controller) {
+        foreach (Player pl in PlayerList) {
+            if (pl.Controller == controller) {
+                return pl;
+            }
+        }
+        return null;
+    }
 }

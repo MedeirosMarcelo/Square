@@ -861,7 +861,7 @@ Transform:
   m_GameObject: {fileID: 171288}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: -0.15, y: 1.47, z: 8.67}
-  m_LocalScale: {x: 1, y: 2.1629193, z: 31.3577}
+  m_LocalScale: {x: 1, y: 2.1629193, z: 55.336266}
   m_Children: []
   m_Father: {fileID: 417112}
   m_RootOrder: 1
@@ -951,7 +951,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198004}
   m_LocalRotation: {x: -0.000000008990183, y: 0.40399748, z: 0.000000011547964, w: 0.9147602}
-  m_LocalPosition: {x: -3.07, y: -0.29, z: -2.81}
+  m_LocalPosition: {x: 1.57, y: -0.29, z: -2.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493686}
@@ -1024,7 +1024,7 @@ Transform:
   m_GameObject: {fileID: 159278}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
   m_LocalPosition: {x: -0.15, y: 1.47, z: -8.69}
-  m_LocalScale: {x: 1, y: 2.1629193, z: 31.357698}
+  m_LocalScale: {x: 1, y: 2.1629193, z: 54.53366}
   m_Children: []
   m_Father: {fileID: 417112}
   m_RootOrder: 2
@@ -1445,7 +1445,7 @@ Transform:
   m_GameObject: {fileID: 194892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.54, y: 0.9200001, z: 0}
-  m_LocalScale: {x: 0.66124564, y: 1, z: 18.092867}
+  m_LocalScale: {x: 0.66124564, y: 1, z: 5.2519407}
   m_Children: []
   m_Father: {fileID: 447168}
   m_RootOrder: 11
@@ -2028,8 +2028,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.187349, y: 4.2106256, z: 1}
+  m_Center: {x: 6.5936775, y: -1.6053131, z: 0}
 --- !u!65 &6522544
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2040,8 +2040,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.35294, y: 5.9570403, z: 1}
+  m_Center: {x: -6.6764717, y: -2.4785209, z: 0}
 --- !u!65 &6528656
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2064,8 +2064,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 15.364159, y: 4.8227625, z: 1}
+  m_Center: {x: -7.182076, y: -1.9113828, z: -1.2295916e-10}
 --- !u!65 &6538226
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2100,8 +2100,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.242825, y: 3.5937123, z: 0.9999985}
+  m_Center: {x: 6.62141, y: -1.296857, z: -7.845804e-12}
 --- !u!65 &6578848
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2198,7 +2198,7 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 0.47794116, g: 0.9135902, b: 1, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 23.24
   m_SpotAngle: 152
   m_CookieSize: 10
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6df1ac299133c244983c6e2c1d55f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clockTime: 60
+  clockTime: 10
   runnerRespawnDelay: 1
   bomberRespawnDelay: 2
   modifierSpawner: {fileID: 0}
@@ -2616,7 +2616,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: 0.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2766,7 +2766,7 @@ ParticleSystem:
     radius: 1
     angle: 25
     length: 5
-    boxX: 13.756008
+    boxX: 5.7265477
     boxY: 1.5191503
     boxZ: 1
     arc: 360
@@ -2784,7 +2784,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2982,7 +2982,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4294936393
+          rgba: 4294936679
         key1:
           serializedVersion: 2
           rgba: 1677711566

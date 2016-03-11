@@ -7,6 +7,7 @@ public class Player {
     public string Name { get; set; }
     public BaseCharacter Character { get; set; }
     public Material colorMaterial;
+    public Sprite colorSprite;
     public GameObject Hat;
 
     public Player(ControllerId controller, string name) {
