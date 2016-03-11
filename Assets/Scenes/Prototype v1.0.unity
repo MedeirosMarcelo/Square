@@ -428,6 +428,10 @@ Prefab:
       propertyPath: runnerPrefab
       value: 
       objectReference: {fileID: 144968, guid: 7c4510774ee6aaa408d31977fd3d868d, type: 2}
+    - target: {fileID: 11484738, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
+      propertyPath: bomberPrefab
+      value: 
+      objectReference: {fileID: 103778, guid: 5c4c8d896d91b264798f9ed6311ed668, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
   m_IsPrefabParent: 0
