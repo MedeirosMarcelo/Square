@@ -225,7 +225,7 @@ Transform:
   m_Children:
   - {fileID: 1799877777}
   m_Father: {fileID: 1539243272}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!23 &31044661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ GameObject:
   - 4: {fileID: 390052195}
   - 108: {fileID: 390052196}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: SpotlightFirePit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,7 +1199,7 @@ Transform:
   m_Children:
   - {fileID: 134890366}
   m_Father: {fileID: 1539243272}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &647706851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,13 +1651,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1021676644}
+  - 114: {fileID: 1021676645}
   m_Layer: 0
-  m_Name: Light
+  m_Name: LightPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1021676644
 Transform:
   m_ObjectHideFlags: 0
@@ -1670,7 +1671,21 @@ Transform:
   m_Children:
   - {fileID: 1892796007}
   m_Father: {fileID: 1539243272}
-  m_RootOrder: 12
+  m_RootOrder: 13
+--- !u!114 &1021676645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021676643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354550809b922e248915badb9ab5560f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 390052196}
+  amount: -0.2
+  speed: 1.88
 --- !u!1 &1022105090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,6 +3560,68 @@ Transform:
   - {fileID: 825216770}
   m_Father: {fileID: 1539243272}
   m_RootOrder: 7
+--- !u!1 &1299978217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 198004, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1299978218}
+  - 108: {fileID: 1299978219}
+  m_Layer: 0
+  m_Name: SpotlightPortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1299978218
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 412192, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1299978217}
+  m_LocalRotation: {x: -0.000000008990183, y: 0.40399748, z: 0.000000011547964, w: 0.9147602}
+  m_LocalPosition: {x: 1.57, y: -0.29, z: -2.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1706985656}
+  m_RootOrder: 0
+--- !u!108 &1299978219
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10876242, guid: c282b40a3d8579a4384128bb35708895,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1299978217}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 0
+  m_Color: {r: 0.47794116, g: 0.9135902, b: 1, a: 1}
+  m_Intensity: 0.75
+  m_Range: 23.24
+  m_SpotAngle: 135.60674
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &1330555388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,7 +3794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6df1ac299133c244983c6e2c1d55f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clockTime: 10
+  clockTime: 60
   runnerRespawnDelay: 1
   bomberRespawnDelay: 2
   modifierSpawner: {fileID: 0}
@@ -3765,6 +3842,7 @@ Transform:
   - {fileID: 647706852}
   - {fileID: 1895224904}
   - {fileID: 1722687786}
+  - {fileID: 1706985656}
   - {fileID: 1021676644}
   - {fileID: 619074847}
   - {fileID: 31044660}
@@ -3797,6 +3875,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2069457633}
   m_RootOrder: 3
+--- !u!1 &1706985655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 164146, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1706985656}
+  - 114: {fileID: 1706985657}
+  m_Layer: 0
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706985656
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 493686, guid: c282b40a3d8579a4384128bb35708895, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706985655}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -13.74, y: 2.96, z: -0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1299978218}
+  m_Father: {fileID: 1539243272}
+  m_RootOrder: 12
+--- !u!114 &1706985657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706985655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354550809b922e248915badb9ab5560f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1299978219}
+  amount: -0.2
+  speed: 1.88
 --- !u!1 &1722687785
 GameObject:
   m_ObjectHideFlags: 0
@@ -5572,7 +5693,7 @@ GameObject:
   - 4: {fileID: 1892796007}
   - 108: {fileID: 1892796008}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: SpotlightPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
