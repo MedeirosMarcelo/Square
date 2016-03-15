@@ -3737,15 +3737,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452798, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 351.397522
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452798, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 122.868835
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 452798, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 434.6427
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 452798, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3779,6 +3779,11 @@ Prefab:
       propertyPath: bomberPrefab
       value: 
       objectReference: {fileID: 103778, guid: 5c4c8d896d91b264798f9ed6311ed668, type: 2}
+    - target: {fileID: 196940, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7bb35f6833230544a60da97dc9fd96b, type: 2}
   m_IsPrefabParent: 0
@@ -3794,7 +3799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6df1ac299133c244983c6e2c1d55f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clockTime: 60
+  clockTime: 10
   runnerRespawnDelay: 1
   bomberRespawnDelay: 2
   modifierSpawner: {fileID: 0}
