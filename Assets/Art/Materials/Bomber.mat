@@ -147,6 +147,10 @@ Material:
         second: 0
       data:
         first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
           name: _Stencil
         second: 0
       data:
@@ -173,10 +177,6 @@ Material:
         first:
           name: _UseUIAlphaClip
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: 1
     m_Colors:
       data:
         first:

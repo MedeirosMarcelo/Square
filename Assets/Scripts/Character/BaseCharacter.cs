@@ -31,6 +31,7 @@ public class BaseCharacter : MonoBehaviour {
 
     protected float respawnDelay;
     protected GameManager gameManager;
+    protected GameObject deathParticle;
 
     [SerializeField]
     Color baseColor = Color.white;
@@ -42,7 +43,6 @@ public class BaseCharacter : MonoBehaviour {
     ParticleSystem.EmissionModule largeEmission;
     GameObject trail;
     GameObject trail2;
-    GameObject deathParticle;
     GameObject model;
     Vector3 velocity;
 
@@ -155,7 +155,6 @@ public class BaseCharacter : MonoBehaviour {
 
     virtual public void Die(string killerTag) {
         //HideModifiers(true);
-        deathParticle.SetActive(true);
         model.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
         rigidbody.velocity = Vector3.zero;

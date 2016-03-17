@@ -11,6 +11,12 @@ public class Runner : BaseCharacter {
         base.Start();
         name = "Runner";
         type = CharacterType.Runner;
+        if (player != null) {
+            if (player.colorMaterial != null) {
+                deathParticle.GetComponent<ParticleSystemRenderer>().material = player.colorMaterial;
+                deathParticle.transform.Find("Death Particles Fast").GetComponent<ParticleSystemRenderer>().material = player.colorMaterial;
+            }
+        }
         if (player.colorMaterial != null) {
             transform.Find("Model").Find("Runner").GetComponent<SkinnedMeshRenderer>().material = player.colorMaterial;
         }
@@ -81,7 +87,8 @@ public class Runner : BaseCharacter {
     }
 
     void OnCollisionEnter(Collision col) {
-        if (col.gameObject.name == "Explosion") {
+        if (col.gameObject.name == "Explosion" ||
+            col.gameObject.tag == "Fire") {
             Die(col.gameObject.tag);
         }
     }
@@ -90,6 +97,7 @@ public class Runner : BaseCharacter {
         if (State != CharacterState.Dead) {
             DropFlag();
             EnterState(CharacterState.Dead);
+            deathParticle.SetActive(true);
             base.Die(killerTag);
         }
     }

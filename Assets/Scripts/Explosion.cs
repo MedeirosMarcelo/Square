@@ -7,7 +7,9 @@ public class Explosion : MonoBehaviour {
     public float duration = 3f;
     public Material mat;
     public float matValue;
-    GameObject explosion;
+    public GameObject explosionModel;
+    public GameObject chargingModel;
+    SphereCollider explosionCollider;
     Bomber bomber;
     Timer timer = new Timer();
     Animator animator;
@@ -16,15 +18,17 @@ public class Explosion : MonoBehaviour {
     void Start() {
         animator = GetComponent<Animator>();
         bomber = transform.parent.GetComponent<Bomber>();
+        explosionCollider = GetComponent<SphereCollider>();
     }
 
     void Update() {
         ChangeBomberColor();
-        mat.SetFloat("_SliceAmount", matValue);
+        //mat.SetFloat("_SliceAmount", matValue);
     }
 
     public void TriggerBomb() {
         triggered = true;
+        chargingModel.SetActive(true);
         StartCoroutine("Trigger", bombDelay);
     }
 
@@ -36,8 +40,9 @@ public class Explosion : MonoBehaviour {
     public void Explode() {
         if (bomber.State == CharacterState.Alive) {
             transform.SetParent(null);
-            animator.SetBool("Explode", true);
-            //Destroy(this.gameObject, duration);
+            explosionModel.SetActive(true);
+            explosionCollider.enabled = true;
+            Destroy(this.gameObject, duration);
         }
     }
 

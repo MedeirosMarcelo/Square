@@ -91,7 +91,7 @@ public class CharacterPanel : MonoBehaviour {
         controllerText.SetActive(false);
         readyText.SetActive(true);
         colorPanel.SetActive(true);
-        fashionPanel.SetActive(true);
+        //fashionPanel.SetActive(true); -- When there are hats.
         runner.gameObject.SetActive(true);
         isActive = true;
     }
@@ -101,7 +101,7 @@ public class CharacterPanel : MonoBehaviour {
         controllerText.SetActive(true);
         readyText.SetActive(false);
         colorPanel.SetActive(false);
-        fashionPanel.SetActive(false);
+        //fashionPanel.SetActive(false); -- When there are hats.
         runner.gameObject.SetActive(false);
         isActive = false;
     }
@@ -120,7 +120,7 @@ public class CharacterPanel : MonoBehaviour {
     void UnreadySelection() {
         readyText.SetActive(true);
         colorPanel.SetActive(true);
-        fashionPanel.SetActive(true);
+        //fashionPanel.SetActive(true); -- When there are hats.
         isReady = false;
     }
 
@@ -200,11 +200,11 @@ public class CharacterPanel : MonoBehaviour {
 
     void ControlSelection() {
         if (isActive) {
-            if (input.menuVertical == -1) {
+            if (input.menuVertical == 1) {
                 MoveDown();
                 ChangeCharacterColor();
             }
-            else if (input.menuVertical == 1) {
+            else if (input.menuVertical == -1) {
                 MoveUp();
                 ChangeCharacterColor();
             }

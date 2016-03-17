@@ -74,6 +74,9 @@ public class Bomber : BaseCharacter {
             if (killerTag == "Explosion" || killerTag == "Bomber") {
                 explosion.Explode();
             }
+            else {
+                deathParticle.SetActive(true);
+            }
             EnterState(CharacterState.Dead);
             base.Die(killerTag);
         }
@@ -86,7 +89,8 @@ public class Bomber : BaseCharacter {
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Explosion" ||
             col.gameObject.tag == "Runner" ||
-            col.gameObject.tag == "Bomber") {
+            col.gameObject.tag == "Bomber" ||
+            col.gameObject.tag == "Fire") {
             Die(col.gameObject.tag);
         }
     }

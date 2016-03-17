@@ -10,6 +10,7 @@ TagManager:
   - Game Manager
   - Explosion
   - Game Canvas
+  - Fire
   layers:
   - Default
   - TransparentFX

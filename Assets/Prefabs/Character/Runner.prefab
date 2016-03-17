@@ -498,6 +498,7 @@ MonoBehaviour:
   id: 0
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   flag: {fileID: 0}
+  colorMaterial: {fileID: 0}
 --- !u!137 &13703018
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -6536,7 +6537,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: d84f9ecd950d9ed429ae2cdca2cef986, type: 2}
+  - {fileID: 2100000, guid: e982c13084e1c1444ae376e74910eb4d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -6577,7 +6578,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: d84f9ecd950d9ed429ae2cdca2cef986, type: 2}
+  - {fileID: 2100000, guid: e982c13084e1c1444ae376e74910eb4d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

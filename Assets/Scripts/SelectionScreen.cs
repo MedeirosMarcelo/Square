@@ -68,7 +68,7 @@ public class SelectionScreen : MonoBehaviour {
     }
 
     void OverrideToStart() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton7)) {
             StartGame();
         }
     }
