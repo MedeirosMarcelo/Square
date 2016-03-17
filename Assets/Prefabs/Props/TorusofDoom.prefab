@@ -26,9 +26,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434776}
+  - 65: {fileID: 6576864}
+  - 114: {fileID: 11444288}
   m_Layer: 0
   m_Name: TorusofDoom
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.03, y: 1.73, z: 0.7}
+  m_LocalPosition: {x: 12.17, y: 1.28, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429980}
@@ -244,6 +246,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114040}
   m_Mesh: {fileID: 4300000, guid: c29bdcd120ff71c4ca0cf15fc8e5899e, type: 3}
+--- !u!65 &6576864
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2274766, z: 1}
+  m_Center: {x: 0, y: -0.1137383, z: 0}
 --- !u!95 &9557966
 Animator:
   serializedVersion: 3
@@ -311,6 +325,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11444288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9538a8d015a2600468056c92947bcc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPosition: {x: -0.06, y: 1, z: 0}
 --- !u!135 &13526874
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -319,7 +345,7 @@ SphereCollider:
   m_GameObject: {fileID: 168648}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.17
   m_Center: {x: 0, y: 0, z: 0}
@@ -331,7 +357,7 @@ SphereCollider:
   m_GameObject: {fileID: 181762}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.17
   m_Center: {x: 0, y: 0, z: 0}
